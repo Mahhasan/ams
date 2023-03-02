@@ -13,7 +13,24 @@
                         </div>
                         <form class="user" method="POST" action="{{ route('membership-form') }}">
                             @csrf
+                            @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
+
+                            @if(session()->get('success'))
+                                <div class="alert alert-success">
+                                {{ session()->get('success') }}  
+                                </div><br />
+                            @endif
                             <div class="form-group row">
+                                <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                                <input name="status" type="hidden" value="Pending"> 
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <input id="FirstName" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required autocomplete="first_name" autofocus placeholder="First Name">
 
@@ -45,7 +62,14 @@
                                 @enderror
                             </div>
 
-                           
+                            <div class="form-group">
+                                <input id="Number" type="number" class="form-control form-control-user @error('number') is-invalid @enderror" name="number" required autocomplete="number" placeholder="Phone Number">
+                                @error('number')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                             <button type="submit" class="btn btn-primary btn-user btn-block">
                                 {{ __('Submit') }}
                             </button>

@@ -15,9 +15,12 @@ return new class extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email')->unique();
+            $table->string('number');
+            $table->string('status');
             $table->timestamps();
         });
     }
