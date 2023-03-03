@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('members', function (Blueprint $table) {
+        Schema::create('members', function (Blueprint $table) { 
             $table->id();
             $table->integer('user_id');
             $table->string('first_name');
@@ -21,6 +21,17 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('number');
             $table->string('status');
+            $table->string('date');
+            $table->string('designation');
+            $table->string('department');
+            $table->string('organization_name');
+            $table->string('business_type');
+            $table->string('registration_number');
+            $table->string('org_email');
+            $table->string('org_address');
+            $table->string('affiliation');
+            $table->string('country');
+            $table->string('categroy_name');
             $table->timestamps();
         });
     }

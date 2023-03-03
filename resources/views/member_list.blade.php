@@ -4,12 +4,12 @@
 
 <div class="container-fluid">
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Pending Member List</h1>
+    <h1 class="h3 mb-2 text-gray-800">Member List</h1>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary"></h6>
+            <h6 class="m-0 font-weight-bold text-primary"> Demo</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -21,18 +21,16 @@
                             <th>Email</th>
                             <th>Mobile</th>
                             <th>Status</th>
-                            <th>Details</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($pending_members as $pending_member)
+                        @foreach ($members as $member)
                         <tr>
-                            <td>{{$pending_member->id}}</td>
-                            <td>{{$pending_member->first_name}} {{$pending_member->last_name}}</td>
-                            <td>{{$pending_member->email}}</td>
-                            <td>{{$pending_member->number}}</td>
-                            <td>{{$pending_member->status}}</td>
-                            <td><a class="btn btn-primary" href="/member_details">details</a></td>
+                            <td>{{$member->id}}</td>
+                            <td>{{$member->first_name}} {{$member->last_name}}</td>
+                            <td>{{$member->email}}</td>
+                            <td>{{$member->number}}</td>
+                            <td>{{$member->status}}</td>
                         </tr>
                         @endforeach
                     </tbody>

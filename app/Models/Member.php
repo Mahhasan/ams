@@ -15,6 +15,17 @@ class Member extends Model
         'email',
         'number',
         'status',
+        'date',
+        'designation',
+        'department',
+        'organization_name',
+        'business_type',
+        'registration_number',
+        'org_email',
+        'org_address',
+        'affiliation',
+        'country',
+        'categroy_name',
 
     ];
 }
