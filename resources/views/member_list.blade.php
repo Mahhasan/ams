@@ -21,6 +21,7 @@
                             <th>Email</th>
                             <th>Mobile</th>
                             <th>Status</th>
+                            <th>Details</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,6 +32,7 @@
                             <td>{{$member->email}}</td>
                             <td>{{$member->number}}</td>
                             <td>{{$member->status}}</td>
+                            <td><a class="btn btn-primary" href="/member_details/{{$member->id}}">details</a></td>
                         </tr>
                         @endforeach
                     </tbody>

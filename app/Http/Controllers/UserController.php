@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Hash;
 use App\Models\Member;
+use Illuminate\Support\Facades\Auth;
 use App\Models\MembershipCategory;
 
 class UserController extends Controller
@@ -18,7 +19,8 @@ class UserController extends Controller
     public function membership_form()
     {
         $membership_category = MembershipCategory::all();
-        return view('user.membership_form',compact('membership_category'));
+        $form_hide = Member::where('members.user_id',Auth::user()->id)->count();
+        return view('user.membership_form',compact('membership_category','form_hide'));
     }
 
     public function create_membership(Request $request)
@@ -61,27 +63,27 @@ class UserController extends Controller
 
     public function member_list()
     {
-        $members = Member::where('status', "Approve")->get();
+        $members = Member::where('status', "Approved")->get();
         return view('member_list',compact('members'));
     }
     public function membership_category()
     {
-        $membership_category = MembershipCategory::where('status', "Approve")->get();
+        $membership_category = MembershipCategory::where('status', "Approved")->get();
         return view('member_list',compact('members'));
     }
     
-    public function member_details()
+    public function member_details($id)
     {
-        $member_details = Member::all();
+        $member_details = Member::find($id);
         return view('member_details',compact('member_details'));
     }
 
-    // public function member_status(Request $request, $id)
-    // {
-    //     $data = Member::find($id);
-    //     $data->status = $request->status;
-    //     $data-> save();
+    public function member_status(Request $request, $id)
+    {
+        $data = Member::find($id);
+        $data->status = $request->status;
+        $data-> save();
 
-    //     return redirect()->route('member_details',$data->id)->with('success', 'Status Updated successfully');
-    // }
+        return redirect()->route('member_details',$data->id)->with('success', 'Status Updated successfully');
+    }
 }

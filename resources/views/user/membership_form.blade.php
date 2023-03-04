@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+@if($form_hide == 0)
 
 <div class="container">
     <div class="card o-hidden border-0 my-5">
@@ -252,13 +253,12 @@
 
                             <!--End Organization Information -->
 
-
                             <!--Start Membership Information -->
-                            <h6 class=" text-gray-900 mb-2 mt-5">Membership Category</h6>
+                            <h6 class="text-gray-900 mb-2 mt-5">Membership Category</h6>
                             <div class="form-group">
                                 <select class="form-control js-example-basic-single" name="categroy_name" required>
                                     @foreach($membership_category as $membership_cat)
-                                    <option value="{{$membership_cat->id}}">{{$membership_cat->category_name}} {{$membership_cat->pricing}}</option>
+                                    <option value="{{$membership_cat->category_name}} {{$membership_cat->pricing}}">{{$membership_cat->category_name}} {{$membership_cat->pricing}}</option>
                                     @endforeach
                                 </select>
                                 @error('categroy_name')
@@ -283,4 +283,8 @@
         </div>
     </div>
 </div>
+@else
+<h1 class="text-success">Please wait until admin approval.</h1>
+@endif
+
 @endsection

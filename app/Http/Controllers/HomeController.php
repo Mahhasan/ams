@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Member;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -26,6 +27,7 @@ class HomeController extends Controller
     {
         $total_member = Member::where('status', '=', 'Approved')->count();
         $pending_member = Member::where('status', '=', 'Pending')->count();
-        return view('home',compact('total_member','pending_member',));
+        $form_hide = Member::where('members.user_id',Auth::user()->id)->count();
+        return view('home',compact('total_member','pending_member','form_hide'));
     }
 }

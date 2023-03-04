@@ -5,13 +5,12 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-        @if(Auth::user()->role == 'user')
-        <a href="{{route('membership-form')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Become a Member</a>
+        @if(Auth::user()->role == 'user' && $form_hide == 0)
+        <a href="{{route('membership-form')}}" class="d-none d-sm-inline-block btn btn-md btn-primary shadow-sm">Become a Member</a>
         @endif
         <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
     </div>
-
     <!-- Content Row -->
     <div class="row">
     @if(Auth::user()->role == 'admin')
