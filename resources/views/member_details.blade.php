@@ -5,8 +5,7 @@
 
     <div class="card-body">
         <div class="row">
-        <h4 class="ml-2"> Details information of {{ isset(Auth::user()->first_name) ? Auth::user()->first_name : Auth::user()->email }}
-        {{ isset(Auth::user()->last_name) ? Auth::user()->last_name : Auth::user()->email }}
+        <h4 class="ml-2"> Details information of {{$member_details->first_name}} {{$member_details->last_name}}
         </h4>
             <div class="col-lg-12">
             @if ($errors->any())
@@ -24,7 +23,10 @@
                     </div><br />
                 @endif
                     <table class="table table-striped table-bordered" style="width:100%">
-                
+                    <tr>
+                        <th class="col-sm-2">Name</th>
+                        <td>{{$member_details->first_name}} {{$member_details->last_name}}</td>
+                    </tr>
                     <tr>
                         <th class="col-sm-2">Email</th>
                         <td>{{$member_details->email}}</td>

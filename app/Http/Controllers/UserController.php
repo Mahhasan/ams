@@ -7,6 +7,8 @@ use Hash;
 use App\Models\Member;
 use Illuminate\Support\Facades\Auth;
 use App\Models\MembershipCategory;
+use Mail;
+use DB;
 
 class UserController extends Controller
 {
@@ -52,6 +54,7 @@ class UserController extends Controller
             'categroy_name' => $request['categroy_name'],
         ]);
         $member->save();
+
         return redirect('/membership-form')->with('success', 'Information successfully Submitted');
     }
 
