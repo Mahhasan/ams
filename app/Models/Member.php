@@ -25,7 +25,9 @@ class Member extends Model
         'org_address',
         'affiliation',
         'country',
-        'categroy_name',
+        'membership_category',
+        'membership_price',
+        
 
     ];
 }

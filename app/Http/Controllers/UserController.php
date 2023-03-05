@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Hash;
 use App\Models\Member;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\MembershipCategory;
 use Mail;
@@ -15,14 +16,18 @@ class UserController extends Controller
     //
     public function user_profile()
     {
-        return view('user.profile');
+        $users = User::where('users.id',Auth::user()->id)->first();
+        $members = Member::where('members.user_id',Auth::user()->id)->first();
+        $is_paid = Member::where('members.user_id',Auth::user()->id)->where('members.status','Approved')->count();
+        return view('user.profile',compact('users','members','is_paid'));
     }
 
     public function membership_form()
     {
+        $users = User::where('users.id',Auth::user()->id)->first();
         $membership_category = MembershipCategory::all();
         $form_hide = Member::where('members.user_id',Auth::user()->id)->count();
-        return view('user.membership_form',compact('membership_category','form_hide'));
+        return view('user.membership_form',compact('membership_category','form_hide','users'));
     }
 
     public function create_membership(Request $request)
@@ -30,7 +35,7 @@ class UserController extends Controller
         $request->validate([
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255'],
             // 'organization' => ['required', 'string', 'max:255'],
             // 'country' => ['required', 'string', 'max:255'],
         ]);
@@ -51,11 +56,12 @@ class UserController extends Controller
             'org_address' => $request['org_address'],
             'affiliation' => $request['affiliation'],
             'country' => $request['country'],
-            'categroy_name' => $request['categroy_name'],
+            'membership_category' => $request['membership_category'],
+            'membership_price' => $request['membership_price'],
         ]);
         $member->save();
 
-        return redirect('/membership-form')->with('success', 'Information successfully Submitted');
+        return redirect('/home')->with('success', 'Information successfully Submitted');
     }
 
     public function pending_member_list()

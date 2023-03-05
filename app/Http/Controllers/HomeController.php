@@ -28,6 +28,8 @@ class HomeController extends Controller
         $total_member = Member::where('status', '=', 'Approved')->count();
         $pending_member = Member::where('status', '=', 'Pending')->count();
         $form_hide = Member::where('members.user_id',Auth::user()->id)->count();
-        return view('home',compact('total_member','pending_member','form_hide'));
+        $member_data = Member::where('members.user_id',Auth::user()->id)->first();
+        $is_paid = Member::where('members.user_id',Auth::user()->id)->where('members.status','Approved')->count();
+        return view('home',compact('total_member','pending_member','form_hide','is_paid','member_data'));
     }
 }

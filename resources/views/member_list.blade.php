@@ -32,7 +32,7 @@
                             <td>{{$member->email}}</td>
                             <td>{{$member->number}}</td>
                             <td>{{$member->status}}</td>
-                            <td><a class="btn btn-primary" href="/member_details/{{$member->id}}">details</a></td>
+                            <td><a class="btn btn-primary" href="/member_details/{{$member->id}}">Details</a></td>
                         </tr>
                         @endforeach
                     </tbody>

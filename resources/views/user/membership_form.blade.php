@@ -14,28 +14,14 @@
                         </div>
                         <form class="user" method="POST" action="{{ route('membership-form') }}">
                             @csrf
-                            @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                            @endif
-
-                            @if(session()->get('success'))
-                                <div class="alert alert-success">
-                                {{ session()->get('success') }}  
-                                </div><br />
-                            @endif
+                            
                             <!--Start Member Information -->
                             <h6 class=" text-gray-900 mb-2">Member Information</h6>
                             <div class="form-group row">
                                 <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                                 <input name="status" type="hidden" value="Pending"> 
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input id="FirstName" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required autocomplete="first_name" autofocus placeholder="First Name">
+                                    <input id="FirstName" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{$users->first_name}}" required autocomplete="first_name" autofocus readonly>
 
                                     @error('first_name')
                                         <span class="invalid-feedback" role="alert">
@@ -45,7 +31,7 @@
                                 </div>
 
                                 <div class="col-sm-6">
-                                <input id="LastName" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required autocomplete="last_name" autofocus placeholder="Last Name">
+                                <input id="LastName" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{$users->last_name}}" required autocomplete="last_name" autofocus readonly>
                                     
                                     @error('last_name')
                                         <span class="invalid-feedback" role="alert">
@@ -55,7 +41,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email Address">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$users->email}}" required autocomplete="email" readonly>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -255,17 +241,28 @@
 
                             <!--Start Membership Information -->
                             <h6 class="text-gray-900 mb-2 mt-5">Membership Category</h6>
-                            <div class="form-group">
-                                <select class="form-control js-example-basic-single" name="categroy_name" required>
-                                    @foreach($membership_category as $membership_cat)
-                                    <option value="{{$membership_cat->category_name}} {{$membership_cat->pricing}}">{{$membership_cat->category_name}} {{$membership_cat->pricing}}</option>
-                                    @endforeach
-                                </select>
-                                @error('categroy_name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                            <div class="form-group row">
+                                <div class="col-sm-8">
+                                    <select class="form-control js-example-basic-single" name="membership_category" required>
+                                        @foreach($membership_category as $membership_cat)
+                                        <option value="{{$membership_cat->category_name}}">{{$membership_cat->category_name}}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('membership_category')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-sm-4">
+                                    <input id="MembershipPrice" type="text" class="form-control" name="membership_price" value="{{ old('membership_price') }}" required autocomplete="membership_price" autofocus placeholder="Package Price">
+                                    
+                                    @error('membership_price')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
                             </div>
                             <!--End Membership Information -->
                             
@@ -283,8 +280,6 @@
         </div>
     </div>
 </div>
-@else
-<h1 class="text-success">Please wait until admin approval.</h1>
 @endif
 
 @endsection

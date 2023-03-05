@@ -4,7 +4,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <!-- <i class="fas fa-laugh-wink"></i> -->
         </div>
-        <div class="sidebar-brand-text mx-3">Association Management System</div>
+        <div class="sidebar-brand-text mx-3 ">Association Management System</div>
     </a>
 
     <!-- Divider -->
@@ -110,42 +110,42 @@
     @elseif(Auth::user()->role == 'user')
     <li class="nav-item">
         <a class="nav-link" href="{{route('profile')}}">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fa fa-user"></i>
             <span>Profile</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fa fa-calendar"></i>
             <span>Calendar </span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fas fa-files-o"></i>
             <span>Documents</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fa fa-calendar"></i>
             <span>Events</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fa fa-handshake-o"></i>
             <span>Meeting</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fa fa-dashboard"></i>
             <span>Smart Board</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fa fa-desktop"></i>
             <span>Help Desk</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fa fa-address-book"></i>
             <span>Contacts</span></a>
     </li>
     @endif

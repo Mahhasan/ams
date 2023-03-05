@@ -77,7 +77,15 @@
                     </tr>
                     <tr>
                         <th class="col-sm-2">Category Name</th>
-                        <td>{{$member_details->categroy_name}}</td>
+                        <td>{{$member_details->membership_category}}</td>
+                    </tr>
+                    <tr>
+                        <th class="col-sm-2">Package Price</th>
+                        <td>{{$member_details->membership_price}}</td>
+                    </tr>
+                    <tr>
+                        <th class="col-sm-2">Payment Status</th>
+                        <td>Paid</td>
                     </tr>
                     <tr>
                         <th class="col-sm-2">Membership Status</th>

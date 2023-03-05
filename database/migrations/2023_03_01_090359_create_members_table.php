@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('user_id');
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('number');
             $table->string('status');
             $table->string('date');
@@ -31,7 +31,8 @@ return new class extends Migration
             $table->string('org_address');
             $table->string('affiliation');
             $table->string('country');
-            $table->string('categroy_name');
+            $table->string('membership_category');
+            $table->string('membership_price');
             $table->timestamps();
         });
     }

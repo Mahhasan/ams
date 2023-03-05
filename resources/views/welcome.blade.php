@@ -1,132 +1,1537 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-        <title>Laravel</title>
+<title>Association Management System</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Fav Icon -->
+<link rel="icon" href="{{asset('frontend/images/favicon.ico')}}" type="image/x-icon">
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+<!-- Stylesheets -->
+<link href="{{asset('frontend/css/font-awesome-all.css')}}" rel="stylesheet">
+<link href="{{asset('frontend/css/flaticon.css')}}" rel="stylesheet">
+<link href="{{asset('frontend/css/owl.css')}}" rel="stylesheet">
+<link href="{{asset('frontend/css/bootstrap.css')}}" rel="stylesheet">
+<link href="{{asset('frontend/css/jquery.fancybox.min.css')}}" rel="stylesheet">
+<link href="{{asset('frontend/css/animate.css')}}" rel="stylesheet">
+<link href="{{asset('frontend/css/nice-select.css')}}" rel="stylesheet">
+<link href="{{asset('frontend/css/color.css')}}" rel="stylesheet">
+<link href="{{asset('frontend/css/style.css')}}" rel="stylesheet">
+<link href="{{asset('frontend/css/responsive.css')}}" rel="stylesheet">
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
+</head>
+
+
+<!-- page wrapper -->
+<body>
+
+    <div class="boxed_wrapper">
+
+
+        <!-- preloader -->
+        <div class="loader-wrap">
+            <div class="preloader">
+                <div class="preloader-close">Preloader Close</div>
+                <div id="handle-preloader" class="handle-preloader">
+                    <div class="animation-preloader">
+                        <div class="spinner"></div>
+                        <div class="txt-loading">
+                            <span data-text-preloader="A" class="letters-loading">
+                                A
+                            </span>
+                            <span data-text-preloader="M" class="letters-loading">
+                                M
+                            </span>
+                            <span data-text-preloader="S" class="letters-loading">
+                                S
+                            </span>
+                            <!-- <span data-text-preloader="t" class="letters-loading">
+                                t
+                            </span>
+                            <span data-text-preloader="e" class="letters-loading">
+                                e
+                            </span>
+                            <span data-text-preloader="h" class="letters-loading">
+                                h
+                            </span>
+                            <span data-text-preloader="a" class="letters-loading">
+                                a
+                            </span>
+                            <span data-text-preloader="l" class="letters-loading">
+                                l
+                            </span>
+                            <span data-text-preloader="l" class="letters-loading">
+                                l
+                            </span> -->
+                        </div>
+                    </div>  
                 </div>
-            @endif
+            </div>
+        </div>
+        <!-- preloader end -->
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
+
+        <!-- search-popup -->
+        <!-- <div id="search-popup" class="search-popup">
+            <div class="close-search"><span>Close</span></div>
+            <div class="popup-inner">
+                <div class="overlay-layer"></div>
+                <div class="search-form">
+                    <form method="post" action="">
+                        <div class="form-group">
+                            <fieldset>
+                                <input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required >
+                                <input type="submit" value="Search Now!" class="theme-btn style-four">
+                            </fieldset>
+                        </div>
+                    </form>
+                    <h3>Recent Search Keywords</h3>
+                    <ul class="recent-searches">
+                        <li><a href="/">Finance</a></li>
+                        <li><a href="/">Idea</a></li>
+                        <li><a href="/">Service</a></li>
+                        <li><a href="/">Growth</a></li>
+                        <li><a href="/">Plan</a></li>
+                    </ul>
                 </div>
+            </div>
+        </div> -->
+        <!-- search-popup end -->
 
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
-                            </div>
-                        </div>
+        <!-- sidebar cart item -->
+        <div class="xs-sidebar-group info-group info-sidebar">
+            <div class="xs-overlay xs-bg-black"></div>
+            <div class="xs-sidebar-widget">
+                <div class="sidebar-widget-container">
+                    <div class="widget-heading">
+                        <a href="#" class="close-side-widget"><i class="fal fa-times"></i></a>
                     </div>
-                </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
+                    <div class="sidebar-textwidget">
+                        <div class="sidebar-info-contents">
+                            <div class="content-inner">
+                                <div class="logo">
+                                    <a href="/"><img src="{{asset('frontend/images/logo-2.png')}}" alt="" /></a>
+                                </div>
+                                <div class="content-box">
+                                    <h4>Book Now</h4>
+                                    <form action="/" method="post" class="booking-form">
+                                        <div class="form-group">
+                                            <input type="text" name="name" placeholder="Name" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" name="email" placeholder="Email" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea name="message" placeholder="Text"></textarea>
+                                        </div>
+                                        <div class="form-group message-btn">
+                                            <button type="submit">Send Now</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="contact-info">
+                                    <h4>Contact Info</h4>
+                                    <ul>
+                                        <li>Chicago 12, Melborne City, USA</li>
+                                        <li><a href="tel:+8801682648101">+88 01682648101</a></li>
+                                        <li><a href="mailto:info@example.com">info@example.com</a></li>
+                                    </ul>
+                                </div>
+                                <ul class="social-box">
+                                    <li class="facebook"><a href="#" class="fab fa-facebook-f"></a></li>
+                                    <li class="twitter"><a href="#" class="fab fa-twitter"></a></li>
+                                    <li class="linkedin"><a href="#" class="fab fa-linkedin-in"></a></li>
+                                    <li class="instagram"><a href="#" class="fab fa-instagram"></a></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+        <!-- END sidebar widget item -->
+
+
+        <!-- main header -->
+        <header class="main-header style-one">
+            <!-- header-top -->
+            <div class="header-top">
+                <div class="auto-container">
+                    <div class="top-inner clearfix">
+                        <div class="left-column pull-left clearfix">
+                            <div class="weathre-box"><i class="flaticon-sunny-day-or-sun-weather"></i><a href="/">25th Jan: 32 0C / 65 0F</a></div>
+                            <ul class="links-box clearfix">
+                                <li><a href="/">In my area</a></li>
+                                <li><a href="/">Faq’s</a></li>
+                                <li><a href="/">Government</a></li>
+                            </ul>
+                        </div>
+                        <div class="right-column pull-right clearfix">
+                            <ul class="info-list clearfix">
+                                <li><i class="flaticon-phone-with-wire"></i><a href="tel:4488812345">+44 888 12 345</a></li>
+                                <li><i class="flaticon-fast"></i><a href="/">Today: 09.00 to 18.45</a></li>
+                            </ul>
+                            <ul class="social-links clearfix">
+                                <li><a href="/"><i class="fab fa-facebook-square"></i></a></li>
+                                <li><a href="/"><i class="fab fa-twitter-square"></i></a></li>
+                                <li><a href="/"><i class="fab fa-youtube-square"></i></a></li>
+                                <li><a href="/"><i class="fab fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- header-lower -->
+            <div class="header-lower">
+                <div class="auto-container">
+                    <div class="outer-box clearfix">
+                        <div class="logo-box pull-left">
+                            <figure class="logo"><a href="/"><img src="{{asset('frontend/images/logo.png')}}" alt="AMS"></a></figure>
+                        </div>
+                        <div class="menu-area clearfix pull-right">
+                            <!--Mobile Navigation Toggler-->
+                            <div class="mobile-nav-toggler">
+                                <i class="icon-bar"></i>
+                                <i class="icon-bar"></i>
+                                <i class="icon-bar"></i>
+                            </div>
+                            <nav class="main-menu navbar-expand-md navbar-light">
+                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation clearfix">
+                                        <li class="current"><a href="/">Home</a>
+                                            <!-- <ul>
+                                                <li><a href="/">Home Page 01</a></li>
+                                                <li><a href="index-2.html">Home Page 02</a></li>
+                                                <li><a href="index-onepage.html">OnePage Home</a></li>
+                                                <li><a href="index-rtl.html">RTL Home</a></li>
+                                                <li class="dropdown"><a href="/">Header Style</a>
+                                                    <ul>
+                                                        <li><a href="/">Header Style 01</a></li>
+                                                        <li><a href="index-2.html">Header Style 02</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul> -->
+                                        </li>
+                                        <li class="dropdown"><a href="/">City Govt</a>
+                                            <ul>
+                                                <li><a href="about.html">About Us</a></li>
+                                                <li><a href="history.html">History</a></li>
+                                                <li><a href="service.html">Services</a></li>
+                                                <li class="dropdown"><a href="/">Portfolio</a>
+                                                    <ul>
+                                                        <li><a href="portfolio.html">Title Overlay</a></li>
+                                                        <li><a href="portfolio-2.html">Title Under Image</a></li>
+                                                        <li><a href="portfolio-3.html">Masonry View</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="faq.html">Faq’s</a></li>
+                                                <li><a href="coming-soon.html">Coming Soon</a></li>
+                                                <li><a href="error.html">404</a></li>
+                                            </ul>
+                                        </li> 
+                                        <li class="dropdown"><a href="/">Departments</a>
+                                            <ul>
+                                                <li><a href="departments.html">All Departments</a></li>
+                                                <li><a href="police-crime.html">Policing & Crime</a></li>
+                                                <li><a href="trasport-traffic.html">Trasport & Traffic</a></li>
+                                                <li><a href="housing-land.html">Housing & Land</a></li>
+                                                <li><a href="health-medical.html">Health & Medical</a></li>
+                                                <li><a href="arts-culture.html">Arts & Culture</a></li>
+                                                <li><a href="tourism-travel.html">Tourism & Travel</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="/">Events</a>
+                                            <ul>
+                                                <li><a href="event.html">Grid View</a></li>
+                                                <li><a href="event-2.html">List View</a></li>
+                                                <li><a href="event-details.html">Single Event</a></li>
+                                            </ul>
+                                        </li>  
+                                        <li class="dropdown"><a href="/">News</a>
+                                            <ul>
+                                                <li><a href="blog.html">Grid View</a></li>
+                                                <li><a href="blog-2.html">List View With SB</a></li>
+                                                <li><a href="blog-details.html">Single Post</a></li>
+                                            </ul>
+                                        </li> 
+                                        <li><a href="contact.html">Contact</a></li>   
+                                    </ul>
+                                </div>
+                            </nav>
+                            <div class="menu-right-content clearfix">
+                                <!-- <div class="language-box">
+                                    <span class="text"><i class="flaticon-world"></i>Eng</span>
+                                    <ul class="language-list clearfix">
+                                        <li><a href="/">Eng</a></li>
+                                        <li><a href="/">Chi</a></li>
+                                        <li><a href="/">Spa</a></li>
+                                        <li><a href="/">Hin</a></li>
+                                    </ul>
+                                </div> -->
+                                <ul class="other-option clearfix">
+                                    <li class="search-btn">
+                                        <a href="{{route('login')}}" class="search-toggler"> Login</a>
+                                    </li>
+                                    <li class="nav-box">
+                                    <a href="{{route('register')}}" class="search-toggler"> Register</a>
+                                    </li>
+                                </ul>
+                                <!-- <ul class="other-option clearfix">
+                                    <li class="search-btn">
+                                        <button type="button" class="search-toggler"><i class="far fa-search"></i></button>
+                                    </li>
+                                    <li class="nav-box">
+                                        <div class="nav-toggler navSidebar-button"><i class="fas fa-th-large"></i></div>
+                                    </li>
+                                </ul> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--sticky Header-->
+            <div class="sticky-header">
+                <div class="auto-container">
+                    <div class="outer-box clearfix">
+                        <div class="logo-box pull-left">
+                            <figure class="logo"><a href="/"><img src="{{asset('frontend/images/logo.png')}}" alt=""></a></figure>
+                        </div>
+                        <div class="menu-area clearfix pull-right">
+                            <nav class="main-menu clearfix">
+                            </nav>
+                            <div class="menu-right-content clearfix">
+                                <ul class="other-option clearfix">
+                                    <li class="search-btn">
+                                        <a href="{{route('login')}}" class="search-toggler"> Login</a>
+                                    </li>
+                                    <li class="nav-box">
+                                    <a href="{{route('register')}}" class="search-toggler"> Register</a>
+                                    </li>
+                                </ul>
+                                <!-- <div class="language-box">
+                                    <span class="text"><i class="flaticon-world"></i>Eng</span>
+                                    <ul class="language-list clearfix">
+                                        <li><a href="/">Eng</a></li>
+                                        <li><a href="/">Chi</a></li>
+                                        <li><a href="/">Spa</a></li>
+                                        <li><a href="/">Hin</a></li>
+                                    </ul>
+
+                                </div>
+                                <ul class="other-option clearfix">
+                                    <li class="search-btn">
+                                        <button type="button" class="search-toggler"><i class="far fa-search"></i></button>
+                                    </li>
+                                    <li class="nav-box">
+                                        <div class="nav-toggler navSidebar-button"><i class="fas fa-th-large"></i></div>
+                                    </li>
+                                </ul> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- main-header end -->
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><i class="fas fa-times"></i></div>
+            
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="/"><img src="{{asset('frontend/images/logo-2.png')}}" alt="" title=""></a></div>
+                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+                <div class="contact-info">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>Chicago 12, Melborne City, USA</li>
+                        <li><a href="tel:+8801682648101">+88 01682648101</a></li>
+                        <li><a href="mailto:info@example.com">info@example.com</a></li>
+                    </ul>
+                </div>
+                <div class="social-links">
+                    <ul class="clearfix">
+                        <li><a href="/"><span class="fab fa-twitter"></span></a></li>
+                        <li><a href="/"><span class="fab fa-facebook-square"></span></a></li>
+                        <li><a href="/"><span class="fab fa-pinterest-p"></span></a></li>
+                        <li><a href="/"><span class="fab fa-instagram"></span></a></li>
+                        <li><a href="/"><span class="fab fa-youtube"></span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div><!-- End Mobile Menu -->
+
+
+        <!-- banner-section -->
+        <section class="banner-section style-one">
+            <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
+                <div class="slide-item">
+                    <div class="image-layer" style="background-image:url({{asset('frontend/images/banner/banner-1.jpg')}})"></div>
+                    <div class="auto-container">
+                        <div class="content-box">
+                            <h6><i class="flaticon-star"></i>Whitehall of San Antonio</h6>
+                            <h1>Probably the Best Town in the Universe.</h1>
+                            <p>Righteous indignation and dislike men who are so beguiled & demoralized by the charms of pleasure of the moment.</p>
+                            <div class="btn-box">
+                                <a href="/" class="theme-btn">Read More</a>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="slide-item">
+                    <div class="image-layer" style="background-image:url({{asset('frontend/images/banner/banner-2.jpg')}})"></div>
+                    <div class="auto-container">
+                        <div class="content-box">
+                            <h6><i class="flaticon-star"></i>Turn Our Change into</h6>
+                            <h1>Help For Rough Sleepers of San Antonio.</h1>
+                            <p>Our power of choice is untrammelled and when nothing prevents our being able to do what we like best is to be welcomed.</p>
+                            <div class="btn-box">
+                                <a href="/" class="theme-btn">Read More</a>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="slide-item">
+                    <div class="image-layer" style="background-image:url({{asset('frontend/images/banner/banner-3.jpg')}})"></div>
+                    <div class="auto-container">
+                        <div class="content-box">
+                            <h6><i class="flaticon-star"></i>Tourist Attractions</h6>
+                            <h1>Museum of Art & the McNay Museum.</h1>
+                            <p>Undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man.</p>
+                            <div class="btn-box">
+                                <a href="/" class="theme-btn">Read More</a>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- banner-section end -->
+
+
+        <!-- activities-section -->
+        <section class="activities-section centred bg-color-1">
+            <div class="auto-container">
+                <div class="inner-container">
+                    <div class="row clearfix">
+                        <div class="col-lg-3 col-md-6 col-sm-12 single-column">
+                            <div class="single-item">
+                                <div class="icon-box"><i class="flaticon-garbage-truck"></i></div>
+                                <h6>Schedule</h6>
+                                <h4>Garbage & Recycling</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 single-column">
+                            <div class="single-item">
+                                <div class="icon-box"><i class="flaticon-parking"></i></div>
+                                <h6>In Effect</h6>
+                                <h4>Alternate Side Parking</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 single-column">
+                            <div class="single-item">
+                                <div class="icon-box"><i class="flaticon-school"></i></div>
+                                <h6>Schools</h6>
+                                <h4>All Schools are Open</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 single-column">
+                            <div class="single-item">
+                                <div class="icon-box"><i class="flaticon-taxes"></i></div>
+                                <h6>Council Tax</h6>
+                                <h4>Pay Your Council Tax</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- activities-section end -->
+
+
+        <!-- about-section -->
+        <section class="about-section sec-pad bg-color-1">
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                        <div class="content_block_1">
+                            <div class="content-box">
+                                <div class="sec-title">
+                                    <h6><i class="flaticon-star"></i><span>Welcome to Whitehall</span></h6>
+                                    <h2>Whitehall is an Inner Metropolitan Municipality</h2>
+                                    <div class="title-shape"></div>
+                                </div>
+                                <div class="text">
+                                    <h5>We denounce with righteous indignation and dislike men who are so beguiled demoralized charms of pleasure.</h5>
+                                    <h4>Mayor, “Jordan Cooper”</h4>
+                                    <p>When our power of choice is untrammelled when nothing prevents our being able to do what we like best, every pleasure is to be welcomed every pain get avoided. But in certain circumstances owing.</p>
+                                </div>
+                                <div class="inner-box clearfix">
+                                    <figure class="signature pull-left"><img src="{{asset('frontend/images/icons/signature.png')}}" alt=""></figure>
+                                    <ul class="social-style-one clearfix">
+                                        <li><a href="/"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="/"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="/"><i class="fab fa-google-plus-g"></i></a></li>
+                                        <li><a href="/"><i class="fab fa-linkedin-in"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="lower-box">
+                                    <div class="row clearfix">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                            <div class="single-item wow fadeInLeft animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                                <div class="icon-box"><i class="flaticon-government"></i></div>
+                                                <h5>Mayor Office</h5>
+                                                <p><a href="tel:4488812345">+44 (888) 12 345</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                            <div class="single-item wow fadeInRight animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                                <div class="icon-box"><i class="flaticon-alert"></i></div>
+                                                <h5>Emergency</h5>
+                                                <p><a href="tel:911">911</a> (Police, Ambula...)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                        <div class="image_block_1">
+                            <div class="image-box">
+                                <figure class="image"><img src="{{asset('frontend/images/resource/about-1.jpg')}}" alt=""></figure>
+                                <div class="text">
+                                    <h4>“Residents Showed Commitment & Courage In this Crucial Situation.”</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- about-section end -->
+
+
+        <!-- explore-section -->
+        <section class="explore-section centred bg-color-2">
+            <figure class="vector-image"><img src="{{asset('frontend/images/icons/vector-1.png')}}" alt=""></figure>
+            <div class="pattern-layer" style="background-image: url({{asset('frontend/images/shape/shape-1.png')}});"></div>
+            <div class="auto-container">
+                <div class="sec-title centred light">
+                    <h6><i class="flaticon-star"></i><span>Governance & Strategy</span><i class="flaticon-star"></i></h6>
+                    <h2>Explore City Government</h2>
+                    <div class="title-shape"></div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-4 col-md-6 col-sm-12 explore-block">
+                        <div class="explore-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <figure class="image-box"><img src="{{asset('frontend/images/resource/explore-1.jpg')}}" alt=""></figure>
+                                <div class="content-box">
+                                    <div class="text">
+                                        <div class="icon-box"><i class="flaticon-scroll"></i></div>
+                                        <h4>History & Establishment</h4>
+                                    </div>
+                                    <div class="overlay-content">
+                                        <h4>History & <br />Establishment</h4>
+                                        <p>Toil and pain can procure him some great take a trivial example.</p>
+                                        <ul class="link-box clearfix">
+                                            <li>
+                                                <a href="about.html">
+                                                    <i class="flaticon-dog"></i>
+                                                    <span>Read More</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="mailto:info@example.com">
+                                                    <i class="flaticon-mail-inbox-app"></i>
+                                                    <span>info@example.com</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 explore-block">
+                        <div class="explore-block-one wow fadeInUp animated animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <figure class="image-box"><img src="{{asset('frontend/images/resource/explore-2.jpg')}}" alt=""></figure>
+                                <div class="content-box">
+                                    <div class="text">
+                                        <div class="icon-box"><i class="flaticon-goverment"></i></div>
+                                        <h4>Business & Administration</h4>
+                                    </div>
+                                    <div class="overlay-content">
+                                        <h4>Business & <br />Administration</h4>
+                                        <p>Toil and pain can procure him some great take a trivial example.</p>
+                                        <ul class="link-box clearfix">
+                                            <li>
+                                                <a href="about.html">
+                                                    <i class="flaticon-dog"></i>
+                                                    <span>Read More</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="mailto:info@example.com">
+                                                    <i class="flaticon-mail-inbox-app"></i>
+                                                    <span>info@example.com</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 explore-block">
+                        <div class="explore-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <figure class="image-box"><img src="{{asset('frontend/images/resource/explore-3.jpg')}}" alt=""></figure>
+                                <div class="content-box">
+                                    <div class="text">
+                                        <div class="icon-box"><i class="flaticon-budget"></i></div>
+                                        <h4>Budget & Govt. Policies</h4>
+                                    </div>
+                                    <div class="overlay-content">
+                                        <h4>Budget & <br />Govt. Policies</h4>
+                                        <p>Toil and pain can procure him some great take a trivial example.</p>
+                                        <ul class="link-box clearfix">
+                                            <li>
+                                                <a href="about.html">
+                                                    <i class="flaticon-dog"></i>
+                                                    <span>Read More</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="mailto:info@example.com">
+                                                    <i class="flaticon-mail-inbox-app"></i>
+                                                    <span>info@example.com</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- explore-section end -->
+
+
+        <!-- explore-banner -->
+        <div class="explore-banner bg-color-1">
+            <div class="auto-container">
+                <div class="inner-container clearfix">
+                    <div class="single-item">
+                        <div class="title-box">
+                            <h3>Recent Documents</h3>
+                            <p>Enjoy a pleasure that annoying consequences.</p>
+                        </div>
+                    </div>
+                    <div class="single-item">
+                        <div class="inner-box">
+                            <figure class="icon-box"><img src="{{asset('frontend/images/icons/icon-1.png')}}" alt=""></figure>
+                            <h4>Tax_Paid_Challan</h4>
+                            <p><a href="/">Download the Challan Details file</a></p>
+                        </div>
+                    </div>
+                    <div class="single-item">
+                        <div class="inner-box">
+                            <figure class="icon-box"><img src="{{asset('frontend/images/icons/icon-1.png')}}" alt=""></figure>
+                            <h4>Tender_Schedules</h4>
+                            <p><a href="/">Download Your List at Free of Cost</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- explore-banner end -->
+
+
+        <!-- service-section -->
+        <section class="service-section" style="background-image: url({{asset('frontend/images/background/service-bg.jpg')}});">
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                        <div class="service-block-one wow fadeInLeft animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <h4><a href="police-crime.html">Policing & Crime Department</a></h4>
+                                <div class="btn-box"><a href="police-crime.html">More</a></div>
+                                <div class="icon-box"><i class="flaticon-police"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 title-column">
+                        <div class="sec-title centred">
+                            <div class="sec-title centred">
+                                <h6><i class="flaticon-star"></i><span>Departments</span><i class="flaticon-star"></i></h6>
+                                <h2>Explore Our Departments</h2>
+                                <div class="title-shape"></div>
+                                <a href="departments.html" class="links">All Departments<i class="flaticon-right-arrow"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                        <div class="service-block-one wow fadeInRight animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <h4><a href="tourism-travel.html">Finance & Legal Department</a></h4>
+                                <div class="btn-box"><a href="tourism-travel.html">More</a></div>
+                                <div class="icon-box"><i class="flaticon-justice"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                        <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <h4><a href="trasport-traffic.html">Transport & Traffic Department</a></h4>
+                                <div class="btn-box"><a href="trasport-traffic.html">More</a></div>
+                                <div class="icon-box"><i class="flaticon-traffic-sign"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                        <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <h4><a href="arts-culture.html">Arts & Culture Department</a></h4>
+                                <div class="btn-box"><a href="arts-culture.html">More</a></div>
+                                <div class="icon-box"><i class="flaticon-statue"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                        <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <h4><a href="housing-land.html">Housing & Land Department</a></h4>
+                                <div class="btn-box"><a href="housing-land.html">More</a></div>
+                                <div class="icon-box"><i class="flaticon-chinese-house"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                        <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <h4><a href="health-medical.html">Health & Medical Department</a></h4>
+                                <div class="btn-box"><a href="health-medical.html">More</a></div>
+                                <div class="icon-box"><i class="flaticon-hospital"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- service-section end -->
+
+
+        <!-- schedules-section -->
+        <section class="schedules-section sec-pad bg-color-1">
+            <div class="bg-layer" style="background-image: url({{asset('frontend/images/background/schedule-bg.jpg')}});"></div>
+            <div class="auto-container">
+                <div class="title-inner">
+                    <div class="row clearfix">
+                        <div class="col-lg-6 col-md-6 col-sm-12 title-column">
+                            <div class="sec-title light">
+                                <h6><i class="flaticon-star"></i><span>Our Calendars</span></h6>
+                                <h2>Our Schedules & Routines</h2>
+                                <div class="title-shape"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 text-column">
+                            <div class="text">
+                                <p>We denounce with righteous indignation and dislike men who are so beguiled demoralized charms of pleasure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule-tab">
+                    <div class="tab-btn-box">
+                        <ul class="tab-btns schedule-tab-btns clearfix">
+                            <li class="p-tab-btn active-btn" data-tab="#tab-1">Upcoming Events</li>
+                            <li class="p-tab-btn" data-tab="#tab-2">Upcoming Metings</li>
+                            <li class="p-tab-btn" data-tab="#tab-3">Community Calendar</li>
+                        </ul>
+                    </div>
+                    <div class="inner-content">
+                        <div class="row clearfix">
+                            <div class="col-lg-4 col-md-12 col-sm-12 form-column">
+                                <div class="subscribe-inner centred">
+                                    <div class="upper-box" style="background-image: url({{asset('frontend/images/resource/schedule-1.jpg')}});">
+                                        <div class="icon-box"><i class="flaticon-letter"></i></div>
+                                        <h3>Subscribe Us</h3>
+                                        <p>Get latest News & Events Details.</p>
+                                    </div>
+                                    <div class="lower-box">
+                                        <form action="contact.html" method="post" class="subscribe-form">
+                                            <div class="form-group">
+                                                <input type="email" name="email" placeholder="mailid@example.com" required="">
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="theme-btn">Subscribe Us</button>
+                                            </div>
+                                        </form>
+                                        <div class="text">
+                                            <h6>Never share your email with others.</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-md-12 col-sm-12 inner-column">
+                                <div class="p-tabs-content">
+                                    <div class="p-tab active-tab" id="tab-1">
+                                        <div class="two-column-carousel owl-carousel owl-theme owl-dots-none">
+                                            <div class="schedule-block-one">
+                                                <div class="inner-box">
+                                                    <div class="image-box">
+                                                        <figure class="image"><img src="{{asset('frontend/images/resource/schedule-2.jpg')}}" alt=""></figure>
+                                                        <div class="content-box">
+                                                            <div class="post-date"><h3>28<span>Jan’21</span></h3></div>
+                                                            <div class="text">
+                                                                <span class="category"><i class="flaticon-star"></i>Celebration</span>
+                                                                <h4><a href="event-details.html">Public Affairs & Public Safety Committee Meeting</a></h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lower-content">
+                                                        <ul class="post-info clearfix">
+                                                            <li><i class="flaticon-clock-circular-outline"></i>3.00 pm - 4.30 pm</li>
+                                                            <li><i class="flaticon-gps"></i>Heaton Park, Mt Road M25 2SW</li>
+                                                        </ul>
+                                                        <div class="links"><a href="event-details.html">Read More<i class="flaticon-right-arrow"></i></a></div>
+                                                        <div class="share-box"><a href="/">Share<i class="fas fa-share-alt"></i></a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="schedule-block-one">
+                                                <div class="inner-box">
+                                                    <div class="image-box">
+                                                        <figure class="image"><img src="{{asset('frontend/images/resource/schedule-3.jpg')}}" alt=""></figure>
+                                                        <div class="content-box">
+                                                            <div class="post-date"><h3>15<span>Feb’21</span></h3></div>
+                                                            <div class="text">
+                                                                <span class="category"><i class="flaticon-star"></i>Art & Culture</span>
+                                                                <h4><a href="event-details.html">Street San Antonio Sketches & Urban History</a></h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lower-content">
+                                                        <ul class="post-info clearfix">
+                                                            <li><i class="flaticon-clock-circular-outline"></i>10.00 am - 6.30 pm</li>
+                                                            <li><i class="flaticon-gps"></i>182 St Georges Road, San Antonio</li>
+                                                        </ul>
+                                                        <div class="links"><a href="event-details.html">Read More<i class="flaticon-right-arrow"></i></a></div>
+                                                        <div class="share-box"><a href="/">Share<i class="fas fa-share-alt"></i></a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-tab" id="tab-2">
+                                        <div class="two-column-carousel owl-carousel owl-theme owl-dots-none">
+                                            <div class="schedule-block-one">
+                                                <div class="inner-box">
+                                                    <div class="image-box">
+                                                        <figure class="image"><img src="{{asset('frontend/images/resource/schedule-2.jpg')}}" alt=""></figure>
+                                                        <div class="content-box">
+                                                            <div class="post-date"><h3>28<span>Jan’21</span></h3></div>
+                                                            <div class="text">
+                                                                <span class="category"><i class="flaticon-star"></i>Celebration</span>
+                                                                <h4><a href="event-details.html">Public Affairs & Public Safety Committee Meeting</a></h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lower-content">
+                                                        <ul class="post-info clearfix">
+                                                            <li><i class="flaticon-clock-circular-outline"></i>3.00 pm - 4.30 pm</li>
+                                                            <li><i class="flaticon-gps"></i>Heaton Park, Mt Road M25 2SW</li>
+                                                        </ul>
+                                                        <div class="links"><a href="event-details.html">Read More<i class="flaticon-right-arrow"></i></a></div>
+                                                        <div class="share-box"><a href="/">Share<i class="fas fa-share-alt"></i></a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="schedule-block-one">
+                                                <div class="inner-box">
+                                                    <div class="image-box">
+                                                        <figure class="image"><img src="{{asset('frontend/images/resource/schedule-3.jpg')}}" alt=""></figure>
+                                                        <div class="content-box">
+                                                            <div class="post-date"><h3>15<span>Feb’21</span></h3></div>
+                                                            <div class="text">
+                                                                <span class="category"><i class="flaticon-star"></i>Art & Culture</span>
+                                                                <h4><a href="event-details.html">Street San Antonio Sketches & Urban History</a></h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lower-content">
+                                                        <ul class="post-info clearfix">
+                                                            <li><i class="flaticon-clock-circular-outline"></i>10.00 am - 6.30 pm</li>
+                                                            <li><i class="flaticon-gps"></i>182 St Georges Road, San Antonio</li>
+                                                        </ul>
+                                                        <div class="links"><a href="event-details.html">Read More<i class="flaticon-right-arrow"></i></a></div>
+                                                        <div class="share-box"><a href="/">Share<i class="fas fa-share-alt"></i></a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-tab" id="tab-3">
+                                        <div class="two-column-carousel owl-carousel owl-theme owl-dots-none">
+                                            <div class="schedule-block-one">
+                                                <div class="inner-box">
+                                                    <div class="image-box">
+                                                        <figure class="image"><img src="{{asset('frontend/images/resource/schedule-2.jpg')}}" alt=""></figure>
+                                                        <div class="content-box">
+                                                            <div class="post-date"><h3>28<span>Jan’21</span></h3></div>
+                                                            <div class="text">
+                                                                <span class="category"><i class="flaticon-star"></i>Celebration</span>
+                                                                <h4><a href="event-details.html">Public Affairs & Public Safety Committee Meeting</a></h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lower-content">
+                                                        <ul class="post-info clearfix">
+                                                            <li><i class="flaticon-clock-circular-outline"></i>3.00 pm - 4.30 pm</li>
+                                                            <li><i class="flaticon-gps"></i>Heaton Park, Mt Road M25 2SW</li>
+                                                        </ul>
+                                                        <div class="links"><a href="event-details.html">Read More<i class="flaticon-right-arrow"></i></a></div>
+                                                        <div class="share-box"><a href="/">Share<i class="fas fa-share-alt"></i></a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="schedule-block-one">
+                                                <div class="inner-box">
+                                                    <div class="image-box">
+                                                        <figure class="image"><img src="{{asset('frontend/images/resource/schedule-3.jpg')}}" alt=""></figure>
+                                                        <div class="content-box">
+                                                            <div class="post-date"><h3>15<span>Feb’21</span></h3></div>
+                                                            <div class="text">
+                                                                <span class="category"><i class="flaticon-star"></i>Art & Culture</span>
+                                                                <h4><a href="event-details.html">Street San Antonio Sketches & Urban History</a></h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lower-content">
+                                                        <ul class="post-info clearfix">
+                                                            <li><i class="flaticon-clock-circular-outline"></i>10.00 am - 6.30 pm</li>
+                                                            <li><i class="flaticon-gps"></i>182 St Georges Road, San Antonio</li>
+                                                        </ul>
+                                                        <div class="links"><a href="event-details.html">Read More<i class="flaticon-right-arrow"></i></a></div>
+                                                        <div class="share-box"><a href="/">Share<i class="fas fa-share-alt"></i></a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- schedules-section end -->
+
+
+        <!-- solutions-section -->
+        <section class="solutions-section">
+            <figure class="image-layer"><img src="{{asset('frontend/images/resource/statue-1.png')}}" alt=""></figure>
+            <div class="pattern-box">
+                <div class="pattern-1" style="background-image: url({{asset('frontend/images/shape/shape-2.png')}});"></div>
+                <div class="pattern-2" style="background-image: url({{asset('frontend/images/shape/shape-3.png')}});"></div>
+                <div class="pattern-3" style="background-image: url({{asset('frontend/images/shape/shape-3.png')}});"></div>
+                <div class="pattern-4 float-bob-y" style="background-image: url({{asset('frontend/images/shape/shape-4.png')}});"></div>
+            </div>
+            <div class="auto-container">
+                <div class="sec-title centred">
+                    <h6><i class="flaticon-star"></i><span>Online Services</span><i class="flaticon-star"></i></h6>
+                    <h2>Instant Solutions For All</h2>
+                    <div class="title-shape"></div>
+                </div>
+                <div class="inner-container">
+                    <div class="upper-box clearfix">
+                        <div class="solution-block-one">
+                            <div class="inner-box">
+                                <div class="icon-box"><i class="flaticon-click"></i></div>
+                                <h4>Taxes & Bills</h4>
+                                <p>Residential & Non-residential</p>
+                            </div>
+                        </div>
+                        <div class="solution-block-one">
+                            <div class="inner-box">
+                                <div class="icon-box"><i class="flaticon-click"></i></div>
+                                <h4>Building Sanction</h4>
+                                <p>Procedure for building permission</p>
+                            </div>
+                        </div>
+                        <div class="solution-block-one">
+                            <div class="inner-box">
+                                <div class="icon-box"><i class="flaticon-click"></i></div>
+                                <h4>Commencement</h4>
+                                <p>Every pain get avoided in certain</p>
+                            </div>
+                        </div>
+                        <div class="solution-block-one">
+                            <div class="inner-box">
+                                <div class="icon-box"><i class="flaticon-click"></i></div>
+                                <h4>Vendor Registration</h4>
+                                <p>Start your business with register</p>
+                            </div>
+                        </div>
+                        <div class="solution-block-one">
+                            <div class="inner-box">
+                                <div class="icon-box"><i class="flaticon-click"></i></div>
+                                <h4>Birth Cirtificate</h4>
+                                <p>Apply & Track birth registration</p>
+                            </div>
+                        </div>
+                        <div class="solution-block-one">
+                            <div class="inner-box">
+                                <div class="icon-box"><i class="flaticon-click"></i></div>
+                                <h4>Fire NOC</h4>
+                                <p>Login or Register to get NOC</p>
+                            </div>
+                        </div>
+                        <div class="solution-block-one">
+                            <div class="inner-box">
+                                <div class="icon-box"><i class="flaticon-click"></i></div>
+                                <h4>Taxis & Private</h4>
+                                <p>Information about registration ...</p>
+                            </div>
+                        </div>
+                        <div class="solution-block-one">
+                            <div class="inner-box">
+                                <div class="icon-box"><i class="flaticon-click"></i></div>
+                                <h4>Death Certificate</h4>
+                                <p>Apply & Track death registration</p>
+                            </div>
+                        </div>
+                        <div class="solution-block-one">
+                            <div class="inner-box">
+                                <div class="icon-box"><i class="flaticon-click"></i></div>
+                                <h4>Raise Complaints</h4>
+                                <p>File grievances against department</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lower-box clearfix">
+                        <div class="bg-layer" style="background-image: url({{asset('frontend/images/background/bg-1.jpg')}});"></div>
+                        <div class="text pull-left">
+                            <div class="icon-box"><i class="flaticon-idea"></i></div>
+                            <h3>Share Your Ideas to Help Our City’s Future.</h3>
+                            <p>We all have different interests, needs and hopes for our city future. What do you think?</p>
+                        </div>
+                        <div class="btn-box pull-right">
+                            <a href="/" class="theme-btn">Share your Say</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- solutions-section end -->
+
+
+        <!-- testimonial-section -->
+        <section class="testimonial-section centred" style="background-image: url({{asset('frontend/images/background/testimonial-bg.jpg')}});">
+            <div class="auto-container">
+                <div class="three-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
+                    <div class="testimonial-block-one">
+                        <div class="inner-box">
+                            <figure class="image-box"><img src="{{asset('frontend/images/resource/testimonial-1.png')}}" alt=""></figure>
+                            <div class="text">
+                                <p>Perfectly simple & easy to free hour when our power choice is nothing too prevents our being able what all get we like best pleasure.</p>
+                            </div>
+                            <div class="author-box">
+                                <h4>Bertram Irvin</h4>
+                                <span class="designation">Citizen</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-block-one">
+                        <div class="inner-box">
+                            <figure class="image-box"><img src="{{asset('frontend/images/resource/testimonial-2.png')}}" alt=""></figure>
+                            <div class="text">
+                                <p>I am highly impressed with the professionalism and passion of the people in this warehouse well educated, neat and clean city life.</p>
+                            </div>
+                            <div class="author-box">
+                                <h4>Ivan Johny</h4>
+                                <span class="designation">Visitors from Indonasia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-block-one">
+                        <div class="inner-box">
+                            <figure class="image-box"><img src="{{asset('frontend/images/resource/testimonial-3.png')}}" alt=""></figure>
+                            <div class="text">
+                                <p>The wise man therefore always holds in these matters to this on principle off selection rejects  to secure others greater pleasures.</p>
+                            </div>
+                            <div class="author-box">
+                                <h4>Lucian Manroe</h4>
+                                <span class="designation">Citizen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- testimonial-section end -->
+
+
+        <!-- team-section -->
+        <section class="team-section sec-pad bg-color-1">
+            <div class="pattern-layer" style="background-image: url({{asset('frontend/images/shape/shape-5.png')}});"></div>
+            <div class="auto-container">
+                <div class="sec-title">
+                    <h6><i class="flaticon-star"></i><span>Whitehall Team</span></h6>
+                    <h2>Meet Council Members</h2>
+                    <div class="title-shape"></div>
+                    <a href="/" class="theme-btn">All members</a>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                        <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <figure class="image-box"><a href="/"><img src="{{asset('frontend/images/team/team-1.jpg')}}" alt=""></a></figure>
+                                <div class="lower-content">
+                                    <div class="author-box">
+                                        <h4><a href="/">Bertram Irvin</a></h4>
+                                        <span class="designation">President</span>
+                                    </div>
+                                    <ul class="othre-info clearfix">
+                                        <li class="mail-box"><a href="/"><i class="flaticon-mail-inbox-app"></i>Email</a></li>
+                                        <li class="phone-box"><i class="flaticon-emergency-call"></i><a href="tel:4488812345">+44 888 12 345</a></li>
+                                        <li class="share-option">
+                                            <i class="share-icon flaticon-share"></i>
+                                            <ul class="share-links clearfix">
+                                                <li><a href="/"><i class="fab fa-pinterest-p"></i></a></li>
+                                                <li><a href="/"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="/"><i class="fab fa-facebook-f"></i></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                        <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <figure class="image-box"><a href="/"><img src="{{asset('frontend/images/team/team-2.jpg')}}" alt=""></a></figure>
+                                <div class="lower-content">
+                                    <div class="author-box">
+                                        <h4><a href="/">Elvina Julie</a></h4>
+                                        <span class="designation">Actuary</span>
+                                    </div>
+                                    <ul class="othre-info clearfix">
+                                        <li class="mail-box"><a href="/"><i class="flaticon-mail-inbox-app"></i>Email</a></li>
+                                        <li class="phone-box"><i class="flaticon-emergency-call"></i><a href="tel:4488812345">+44 888 12 345</a></li>
+                                        <li class="share-option">
+                                            <i class="share-icon flaticon-share"></i>
+                                            <ul class="share-links clearfix">
+                                                <li><a href="/"><i class="fab fa-pinterest-p"></i></a></li>
+                                                <li><a href="/"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="/"><i class="fab fa-facebook-f"></i></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                        <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <figure class="image-box"><a href="/"><img src="{{asset('frontend/images/team/team-3.jpg')}}" alt=""></a></figure>
+                                <div class="lower-content">
+                                    <div class="author-box">
+                                        <h4><a href="/">Herman Gordon</a></h4>
+                                        <span class="designation">Director</span>
+                                    </div>
+                                    <ul class="othre-info clearfix">
+                                        <li class="mail-box"><a href="/"><i class="flaticon-mail-inbox-app"></i>Email</a></li>
+                                        <li class="phone-box"><i class="flaticon-emergency-call"></i><a href="tel:4488812345">+44 888 12 345</a></li>
+                                        <li class="share-option">
+                                            <i class="share-icon flaticon-share"></i>
+                                            <ul class="share-links clearfix">
+                                                <li><a href="/"><i class="fab fa-pinterest-p"></i></a></li>
+                                                <li><a href="/"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="/"><i class="fab fa-facebook-f"></i></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                        <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <figure class="image-box"><a href="/"><img src="{{asset('frontend/images/team/team-4.jpg')}}" alt=""></a></figure>
+                                <div class="lower-content">
+                                    <div class="author-box">
+                                        <h4><a href="/">Marian Lenora</a></h4>
+                                        <span class="designation">Speaker</span>
+                                    </div>
+                                    <ul class="othre-info clearfix">
+                                        <li class="mail-box"><a href="/"><i class="flaticon-mail-inbox-app"></i>Email</a></li>
+                                        <li class="phone-box"><i class="flaticon-emergency-call"></i><a href="tel:4488812345">+44 888 12 345</a></li>
+                                        <li class="share-option">
+                                            <i class="share-icon flaticon-share"></i>
+                                            <ul class="share-links clearfix">
+                                                <li><a href="/"><i class="fab fa-pinterest-p"></i></a></li>
+                                                <li><a href="/"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="/"><i class="fab fa-facebook-f"></i></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- team-section end -->
+
+
+        <!-- news-section -->
+        <section class="news-section bg-color-1">
+            <div class="auto-container">
+                <div class="sec-title centred">
+                    <h6><i class="flaticon-star"></i><span>News & Blog</span><i class="flaticon-star"></i></h6>
+                    <h2>Latest From Our Newsroom</h2>
+                    <div class="title-shape"></div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                        <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    <figure class="image">
+                                        <a href="blog-details.html"><i class="fas fa-link"></i></a>
+                                        <img src="{{asset('frontend/images/news/news-1.jpg')}}" alt="">
+                                    </figure>
+                                    <div class="post-date"><h3>28<span>Jan’21</span></h3></div>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="category"><a href="/"><i class="flaticon-star"></i>Announcement</a></div>
+                                    <h4><a href="blog-details.html">Mayor Invites Medical Experts to Discuss about Covid</a></h4>
+                                    <ul class="post-info clearfix">
+                                        <li><i class="far fa-user"></i><a href="blog-details.html">Harley Reuban</a></li>
+                                        <li><i class="far fa-comment"></i><a href="blog-details.html">2 Comments</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                        <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    <figure class="image">
+                                        <a href="blog-details.html"><i class="fas fa-link"></i></a>
+                                        <img src="{{asset('frontend/images/news/news-2.jpg')}}" alt="">
+                                    </figure>
+                                    <div class="post-date"><h3>14<span>Dec’20</span></h3></div>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="category"><a href="/"><i class="flaticon-star"></i>Education</a></div>
+                                    <h4><a href="blog-details.html">Outdoor Dining to be Extended this Summer</a></h4>
+                                    <ul class="post-info clearfix">
+                                        <li><i class="far fa-user"></i><a href="blog-details.html">Bert Anslem</a></li>
+                                        <li><i class="far fa-comment"></i><a href="blog-details.html">2 Comments</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                        <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    <figure class="image">
+                                        <a href="blog-details.html"><i class="fas fa-link"></i></a>
+                                        <img src="{{asset('frontend/images/news/news-3.jpg')}}" alt="">
+                                    </figure>
+                                    <div class="post-date"><h3>06<span>Nov’20</span></h3></div>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="category"><a href="/"><i class="flaticon-star"></i>Announcement</a></div>
+                                    <h4><a href="blog-details.html">Supporting Local Businesses to Bounce Back</a></h4>
+                                    <ul class="post-info clearfix">
+                                        <li><i class="far fa-user"></i><a href="blog-details.html">Harley Reuban</a></li>
+                                        <li><i class="far fa-comment"></i><a href="blog-details.html">0 Comments</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- news-section end -->
+
+
+        <!-- funfact-section -->
+        <section class="funfact-section">
+            <div class="pattern-layer" style="background-image: url({{asset('frontend/images/shape/shape-7.png')}});"></div>
+            <div class="auto-container">
+                <div class="funfact-content">
+                    <div class="row clearfix">
+                        <div class="col-lg-4 col-md-12 col-sm-12 title-column">
+                            <div class="sec-title">
+                                <h6><i class="flaticon-star"></i><span>Interesting Facts</span></h6>
+                                <h2>City In Numbers</h2>
+                                <div class="title-shape"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-12 col-sm-12 inner-column">
+                            <div class="funfact-inner centred">
+                                <div class="row clearfix">
+                                    <div class="col-lg-3 col-md-6 col-sm-12 funfact-block">
+                                        <div class="funfact-block-one">
+                                            <div class="inner-box">
+                                                <div class="count-outer count-box">
+                                                    <span class="count-text" data-speed="1500" data-stop="45">0</span><span>k</span>
+                                                </div>
+                                                <h6>City Population</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12 funfact-block">
+                                        <div class="funfact-block-one">
+                                            <div class="inner-box">
+                                                <div class="count-outer count-box">
+                                                    <span class="count-text" data-speed="1500" data-stop="168">0</span>
+                                                </div>
+                                                <h6>Total Area in Sq.mi</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12 funfact-block">
+                                        <div class="funfact-block-one">
+                                            <div class="inner-box">
+                                                <div class="count-outer count-box">
+                                                    <span class="count-text" data-speed="1500" data-stop="1.5">0</span><span>M</span>
+                                                </div>
+                                                <h6>Average Revenue</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12 funfact-block">
+                                        <div class="funfact-block-one">
+                                            <div class="inner-box">
+                                                <div class="count-outer count-box">
+                                                    <span class="count-text" data-speed="1500" data-stop="7">0</span><span>th</span>
+                                                </div>
+                                                <h6>Largest City in Us</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="twitter-feed">
+                    <div class="inner-content clearfix">
+                        <div class="single-item">
+                            <div class="title-box centred">
+                                <div class="pattern" style="background-image: url({{asset('frontend/images/shape/shape-6.png')}});"></div>
+                                <div class="icon-box"><i class="fab fa-twitter"></i></div>
+                                <h4>San Antonio on Twitter</h4>
+                                <a href="/">Follow Us</a>
+                            </div>
+                        </div>
+                        <div class="single-item">
+                            <div class="inner-box">
+                                <h5><i class="far fa-calendar"></i>01 January, 2021</h5>
+                                <div class="text">
+                                    <p>Official Twitter channel providing support for users of the <a href="/">Http://gov.usa</a> website. This is not a political account and cannot respond to political tweets.</p>
+                                    <a href="/">Visit: https://covid19test.sananto.com</a>
+                                </div>
+                                <ul class="post-info clearfix">
+                                    <li><i class="far fa-comment"></i><a href="/">28 Cmnts</a></li>
+                                    <li><i class="far fa-heart"></i><a href="/">18 Likes</a></li>
+                                </ul>
+                                <div class="share"><a href="/"><i class="fas fa-share-alt"></i>Share</a></div>
+                            </div>
+                        </div>
+                        <div class="single-item">
+                            <div class="inner-box">
+                                <h5><i class="far fa-calendar"></i>25 December, 2020</h5>
+                                <div class="text">
+                                    <p>Beguiled and demoralized by the charms of pleasure all <a href="/">http://sanantonio.gov/</a> disclaimer blinded desire that circumtances cannot foresee the pain.</p>
+                                </div>
+                                <ul class="post-info clearfix">
+                                    <li><i class="far fa-comment"></i><a href="/">10 Cmnts</a></li>
+                                    <li><i class="far fa-heart"></i><a href="/">20 Likes</a></li>
+                                </ul>
+                                <div class="share"><a href="/"><i class="fas fa-share-alt"></i>Share</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- funfact-section end -->
+
+
+        <!-- main-footer -->
+        <footer class="main-footer">
+            <div class="footer-top">
+                <div class="auto-container">
+                    <div class="top-inner">
+                        <div class="row clearfix">
+                            <div class="col-lg-3 col-md-6 col-sm-12 logo-column">
+                                <figure class="footer-logo"><a href="/"><img src="{{asset('frontend/images/footer-logo.png')}}" alt=""></a></figure>
+                            </div>
+                            <div class="col-lg-5 col-md-6 col-sm-12 text-column">
+                                <div class="text">
+                                    <h3>Services in Your Area</h3>
+                                    <P>Enter postcode to view services & facilities in your area.</P>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12 col-sm-12 form-column">
+                                <form action="/" method="post" class="postcode-form">
+                                    <div class="form-group">
+                                        <input type="text" name="postcode" placeholder="Your Postcode ..." required="">
+                                        <button type="submit">Check</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="widget-section">
+                <div class="auto-container">
+                    <div class="row clearfix">
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="footer-widget links-widget">
+                                <div class="widget-title">
+                                    <h3>Services</h3>
+                                </div>
+                                <div class="widget-content">
+                                    <ul class="links-list clearfix">
+                                        <li><a href="departments.html">All Departments</a></li>
+                                        <li><a href="police-crime.html">Policing & Crime</a></li>
+                                        <li><a href="trasport-traffic.html">Trasport & Traffic</a></li>
+                                        <li><a href="housing-land.html">Housing & Land</a></li>
+                                        <li><a href="health-medical.html">Health & Medical</a></li>
+                                        <li><a href="arts-culture.html">Arts & Culture</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="footer-widget links-widget">
+                                <div class="widget-title">
+                                    <h3>Useful Links</h3>
+                                </div>
+                                <div class="widget-content">
+                                    <ul class="links-list clearfix">
+                                        <li><a href="/">Administration</a></li>
+                                        <li><a href="/">Financial Services</a></li>
+                                        <li><a href="/">Fire Services</a></li>
+                                        <li><a href="/">Library</a></li>
+                                        <li><a href="/">Police</a></li>
+                                        <li><a href="/">Public</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="footer-widget contact-widget">
+                                <div class="widget-title">
+                                    <h3>Contact Info</h3>
+                                </div>
+                                <div class="widget-content">
+                                    <ul class="info clearfix">
+                                        <li>
+                                            <h5>Location</h5>
+                                            <p>46, The queen’s walk Street, <br />San Antonio 78154.</p>
+                                        </li>
+                                        <li>
+                                            <h5>Phone</h5>
+                                            <p><a href="tel:448881234546">+44 888 12 345 46</a></p>
+                                        </li>
+                                        <li>
+                                            <h5>Email</h5>
+                                            <p><a href="mailto:info@example.com">info@example.com</a></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="footer-widget register-widget">
+                                <div class="inner-box">
+                                    <div class="upper">
+                                        <div class="icon-box"><i class="flaticon-edit"></i></div>
+                                        <h4>Register Your Complaint</h4>
+                                    </div>
+                                    <p>Here you can report an issues and make requests.</p>
+                                    <a href="/">Report Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="auto-container">
+                    <div class="bottom-inner clearfix">
+                        <div class="copyright pull-left">
+                            <p>&copy; 2023 By <a href="/">Association Management System</a> All Rights Reserved. </p>
+                        </div>
+                        <ul class="footer-nav clearfix pull-right">
+                            <li><a href="/">FAQ’s</a></li>
+                            <!-- <li><a href="/">Covid’19 Updates </a></li> -->
+                            <li><a href="/">Government</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- main-footer end -->
+
+
+
+        <!--Scroll to top-->
+        <button class="scroll-top scroll-to-target" data-target="html">
+            <span class="fas fa-angle-up"></span>
+        </button>
+    </div>
+
+
+    <!-- jequery plugins -->
+    <script src="{{asset('frontend/js/jquery.js')}}"></script>
+    <script src="{{asset('frontend/js/popper.min.js')}}"></script>
+    <script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('frontend/js/owl.js')}}"></script>
+    <script src="{{asset('frontend/js/wow.js')}}"></script>
+    <script src="{{asset('frontend/js/validation.js')}}"></script>
+    <script src="{{asset('frontend/js/jquery.fancybox.js')}}"></script>
+    <script src="{{asset('frontend/js/appear.js')}}"></script>
+    <script src="{{asset('frontend/js/scrollbar.js')}}"></script>
+    <script src="{{asset('frontend/js/jquery.nice-select.min.js')}}"></script>
+    <script src="{{asset('frontend/js/nav-tool.js')}}"></script>
+
+    <!-- main-js -->
+    <script src="{{asset('frontend/js/script.js')}}"></script>
+
+</body><!-- End of .page_wrapper -->
 </html>
