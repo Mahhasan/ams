@@ -4,7 +4,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <!-- <i class="fas fa-laugh-wink"></i> -->
         </div>
-        <div class="sidebar-brand-text mx-3 ">Association Management System</div>
+        <div class="sidebar-brand-text mx-3 "><img src="{{asset('admin/img/ams.jpg')}}" alt="" height="65" width="150"></div>
     </a>
 
     <!-- Divider -->
