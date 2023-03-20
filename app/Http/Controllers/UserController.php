@@ -22,6 +22,44 @@ class UserController extends Controller
         return view('user.profile',compact('users','members','is_paid'));
     }
 
+    public function update_user_profile(Request $request){
+        $data = Member::where('user_id', Auth::user()->id)->first();
+        $data->first_name = $request->first_name;
+        $data->last_name = $request->last_name;
+        $data->number = $request->number;
+        $data->org_address = $request->org_address;
+        // $data->email = $request->email;
+        $data->affiliation = $request->affiliation;
+        $data->country = $request->country;
+        $data->org_address = $request->org_address;
+        $data->save();
+        return redirect('/profile')->with('success', 'Profile Update successfully');
+    }
+    public function update_profile_pic(Request $request){
+        $data = User::where('id', Auth::user()->id)->first();
+        $input = $request->all();
+
+        if ($image = $request->file('profile_pic')) {
+
+            $destinationPath = 'img/';
+
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+
+            $image->move($destinationPath, $profileImage);
+
+            $input['profile_pic'] = "$profileImage";
+
+        }else{
+
+            unset($input['profile_pic']);
+
+        }
+          
+        $data->update($input);
+        return redirect('/profile')->with('success', 'Profile Updated successfully');
+    }
+
+
     public function membership_form()
     {
         $users = User::where('users.id',Auth::user()->id)->first();
@@ -63,6 +101,76 @@ class UserController extends Controller
 
         return redirect('/home')->with('success', 'Information successfully Submitted');
     }
+
+    public function profileCompletionPercentage()
+    {
+        $user = auth()->user();
+        $member = $user->member;
+
+        // Determine the total number of fields in the members table
+        $totalFields = 17;
+
+        // Determine the number of fields that have been filled by the user
+        $filledFields = 0;
+        if (!is_null($member->first_name)) {
+            $filledFields++;
+        }
+        if (!is_null($member->last_name)) {
+            $filledFields++;
+        }
+        
+        if (!is_null($member->email)) {
+            $filledFields++;
+        }
+        if (!is_null($member->number)) {
+            $filledFields++;
+        }
+        if (!is_null($member->date)) {
+            $filledFields++;
+        }
+        if (!is_null($member->designation)) {
+            $filledFields++;
+        }
+        if (!is_null($member->department)) {
+            $filledFields++;
+        }
+        if (!is_null($member->organization_name)) {
+            $filledFields++;
+        }
+        if (!is_null($member->business_type)) {
+            $filledFields++;
+        }
+        if (!is_null($member->registration_number)) {
+            $filledFields++;
+        }
+        if (!is_null($member->org_email)) {
+            $filledFields++;
+        }
+        if (!is_null($member->org_address)) {
+            $filledFields++;
+        }
+        if (!is_null($member->affiliation)) {
+            $filledFields++;
+        }
+        if (!is_null($member->country)) {
+            $filledFields++;
+        }
+        if (!is_null($member->membership_category)) {
+            $filledFields++;
+        }
+        if (!is_null($member->membership_price)) {
+            $filledFields++;
+        }
+        if (!is_null($member->profile_pic)) {
+            $filledFields++;
+        }
+
+        // Calculate the percentage of profile completion
+        $percentage = round(($filledFields / $totalFields) * 100);
+
+        return $percentage;
+    }
+
 
     public function pending_member_list()
     {

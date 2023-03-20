@@ -27,7 +27,10 @@ class Member extends Model
         'country',
         'membership_category',
         'membership_price',
-        
-
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    
 }

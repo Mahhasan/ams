@@ -12,7 +12,7 @@
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-5">Association Membership Form</h1>
                         </div>
-                        <form class="user" method="POST" action="{{ route('membership-form') }}">
+                        <form class="user" method="POST" action="{{ route('membership-form') }}" enctype="multipart/form-data">
                             @csrf
                             
                             <!--Start Member Information -->
@@ -20,6 +20,7 @@
                             <div class="form-group row">
                                 <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                                 <input name="status" type="hidden" value="Pending"> 
+
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <input id="FirstName" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{$users->first_name}}" required autocomplete="first_name" autofocus readonly>
 
@@ -52,7 +53,8 @@
 
                             <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input id="Date" type="date" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}" required autocomplete="date" autofocus placeholder="Date of Birth">
+                                    <input id="Date" type="text" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}" required autocomplete="date" autofocus placeholder="Date of Birth"
+                    onfocus="(this.type='date')">
 
                                     @error('date')
                                         <span class="invalid-feedback" role="alert">
@@ -174,7 +176,7 @@
                                 </div>
 
                                 <div class="col-sm-6">
-                                    <input id="OrgEmail" type="email" class="form-control @error('org_email') is-invalid @enderror" name="org_email" required autocomplete="org_email" placeholder="Email">
+                                    <input id="OrgEmail" type="email" class="form-control @error('org_email') is-invalid @enderror" name="org_email" required autocomplete="org_email" placeholder="Organization Email">
                                     @error('org_email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -283,3 +285,5 @@
 @endif
 
 @endsection
+
+
