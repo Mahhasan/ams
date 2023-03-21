@@ -85,7 +85,7 @@
                                 </div>
 
                                 <div class="col-sm-6">
-                                <input id="Designation" type="text" class="form-control @error('designation') is-invalid @enderror" name="designation" value="{{ old('designation') }}" required autocomplete="designation" autofocus placeholder="Designation">
+                                <input id="Designation" type="text" class="form-control @error('designation') is-invalid @enderror" name="designation" value="{{ old('designation') }}" autocomplete="designation" autofocus placeholder="Designation">
                                     
                                     @error('designation')
                                         <span class="invalid-feedback" role="alert">

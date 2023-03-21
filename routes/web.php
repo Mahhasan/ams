@@ -22,8 +22,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/profile', [App\Http\Controllers\UserController::class, 'user_profile'])->name('profile');
-Route::put('/profile', [App\Http\Controllers\UserController::class, 'update_user_profile'])->name('profile');
-Route::put('/profile', [App\Http\Controllers\UserController::class, 'update_profile_pic'])->name('profile');
+Route::put('/update_profile_pic', [App\Http\Controllers\UserController::class, 'update_profile_pic'])->name('update_profile_pic');
+Route::put('/update_user_profile', [App\Http\Controllers\UserController::class, 'update_user_profile'])->name('update_user_profile');
+Route::put('/update_Admin_profile', [App\Http\Controllers\UserController::class, 'update_Admin_profile'])->name('update_Admin_profile');
+Route::put('/update_bio', [App\Http\Controllers\UserController::class, 'update_bio'])->name('update_bio');
+
 
 Route::get('/membership-form', [App\Http\Controllers\UserController::class, 'membership_form'])->name('membership-form');
 Route::post('/membership-form', [App\Http\Controllers\UserController::class, 'create_membership'])->name('membership-form');

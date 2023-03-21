@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('number');
             $table->string('status');
             $table->string('date');
-            $table->string('designation');
+            $table->string('designation')->Nullable();
             $table->string('department');
             $table->string('organization_name');
             $table->string('business_type');

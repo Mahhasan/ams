@@ -27,7 +27,8 @@ class UserController extends Controller
         $data->first_name = $request->first_name;
         $data->last_name = $request->last_name;
         $data->number = $request->number;
-        $data->org_address = $request->org_address;
+        $data->designation = $request->designation;
+        $data->organization_name = $request->organization_name;
         // $data->email = $request->email;
         $data->affiliation = $request->affiliation;
         $data->country = $request->country;
@@ -35,6 +36,23 @@ class UserController extends Controller
         $data->save();
         return redirect('/profile')->with('success', 'Profile Update successfully');
     }
+    public function update_bio(Request $request){
+        $data = User::where('id', Auth::user()->id)->first();
+        $data->bio = $request->bio;
+        $data->save();
+        return redirect('/profile')->with('success', 'Bio Update successfully');
+    }
+
+    public function update_Admin_profile(Request $request){
+        $data = User::where('id', Auth::user()->id)->first();
+        $data->first_name = $request->first_name;
+        $data->last_name = $request->last_name;
+        $data->number = $request->number;
+        $data->address = $request->address;
+        $data->save();
+        return redirect('/profile')->with('success', 'Profile Update successfully');
+    }
+
     public function update_profile_pic(Request $request){
         $data = User::where('id', Auth::user()->id)->first();
         $input = $request->all();
@@ -108,7 +126,7 @@ class UserController extends Controller
         $member = $user->member;
 
         // Determine the total number of fields in the members table
-        $totalFields = 17;
+        $totalFields = 16;
 
         // Determine the number of fields that have been filled by the user
         $filledFields = 0;
