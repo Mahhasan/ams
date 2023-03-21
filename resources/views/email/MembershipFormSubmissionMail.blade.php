@@ -1,3 +1,3 @@
-Dear Admin,<br>
+Dear User,<br>
 
-You have received a Membership Form Submission Mail.
+You sent a Membership request.

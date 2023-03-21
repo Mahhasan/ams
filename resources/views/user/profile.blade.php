@@ -179,11 +179,11 @@
             </div>
           </div>
 
-            @else
-            <div class="container">
-              <h2 class="text-center text-danger">Please make your payment to see your profile!!!</h1>
-              <h6><a href="/home"><i class="fa fa-arrow-left" aria-hidden="true"></i> Go to payment page</a></h6>
-            </div>
+           
+            <!-- <div class="container"> -->
+              <!-- <h2 class="text-center text-danger">Please make your payment to see your profile!!!</h1> -->
+              <!-- <h6><a href="/home"><i class="fa fa-arrow-left" aria-hidden="true"></i> Go to payment page</a></h6> -->
+            <!-- </div> -->
             @endif
             @endif
 

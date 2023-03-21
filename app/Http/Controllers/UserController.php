@@ -9,6 +9,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\MembershipCategory;
 use Mail;
+use App\Mail\MembershipFormSubmissionMail;
+use App\Mail\MembershipRequestMail;
 use DB;
 
 class UserController extends Controller
@@ -116,6 +118,9 @@ class UserController extends Controller
             'membership_price' => $request['membership_price'],
         ]);
         $member->save();
+
+        // Mail::to('fgs.se2@daffodilvarsity.edu.bd')->send(new MembershipRequestMail([$member]));
+        Mail::to($member->user->email)->send(new MembershipFormSubmissionMail([$member]));
 
         return redirect('/home')->with('success', 'Information successfully Submitted');
     }

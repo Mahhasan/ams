@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -9,19 +10,31 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class MembershipFormSubmissionMail extends Mailable
+class SubscriptionRenewalNotification extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $user;
+
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+    }
+
+    public function build()
+    {
+        return $this->view('email.subscription-renewal-notification')
+                    ->subject('Subscription Renewal Notification');
+    }
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        //
-    }
+    // public function __construct()
+    // {
+    
+    // }
 
     /**
      * Get the message envelope.
@@ -31,7 +44,7 @@ class MembershipFormSubmissionMail extends Mailable
     // public function envelope()
     // {
     //     return new Envelope(
-    //         subject: 'Membership Form Submission Mail',
+    //         subject: 'Subscription Renewal Notification',
     //     );
     // }
 
@@ -56,10 +69,4 @@ class MembershipFormSubmissionMail extends Mailable
     // {
     //     return [];
     // }
-
-    public function build()
-    {
-        return $this->subject('Mail from AMS')
-                    ->view('email.MembershipFormSubmissionMail');
-    }
 }
