@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Hash;
 use App\Models\Member;
@@ -220,8 +220,13 @@ class UserController extends Controller
 
     public function member_status(Request $request, $id)
     {
+        $currentDate = Carbon::now();
+        $expiryDate = Carbon::now()->addDays(30); // or whatever expiry date calculation you need
+
         $data = Member::find($id);
         $data->status = $request->status;
+        $data->current_date = $currentDate;
+        $data->expiry_date = $expiryDate;
         $data-> save();
 
         return redirect()->route('member_details',$data->id)->with('success', 'Status Updated successfully');

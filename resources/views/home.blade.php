@@ -131,14 +131,9 @@
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Profile Complete
                             </div>
                             <div class="row no-gutters align-items-center">
-                                <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">78%</div>
-                                </div>
-                                <div class="col">
-                                    <div class="progress progress-sm mr-2">
-                                        <div class="progress-bar bg-info" role="progressbar"
-                                            style="width: 78%" aria-valuenow="78" aria-valuemin="0"
-                                            aria-valuemax="100"></div>
+                                <div class="col progress progress-md">
+                                    <div class="h6 mb-0 font-weight-bold text-white-800 progress-bar bg-primary" role="progressbar" aria-valuenow="{{ app('App\Http\Controllers\UserController')->profileCompletionPercentage() }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ app('App\Http\Controllers\UserController')->profileCompletionPercentage() }}%;">
+                                        <span class="progress-value">{{ app('App\Http\Controllers\UserController')->profileCompletionPercentage() }}%</span>
                                     </div>
                                 </div>
                             </div>

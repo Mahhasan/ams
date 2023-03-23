@@ -34,3 +34,13 @@ Route::get('/pending-member-list', [App\Http\Controllers\UserController::class, 
 Route::get('/member_list', [App\Http\Controllers\UserController::class, 'member_list'])->name('member_list');
 Route::get('/member_details/{id}', [App\Http\Controllers\UserController::class, 'member_details'])->name('member_details');
 Route::put('/member_details/{id}', [App\Http\Controllers\UserController::class, 'member_status']);
+
+
+Route::get('/users', [App\Http\Controllers\EmailController::class, 'index'])->name('users');
+Route::post('/users-send-email', [App\Http\Controllers\EmailController::class, 'sendEmail'])->name('ajax.send.email');
+
+// For Cal
+Route::get('/calendar', function () {
+    return view('calendar');
+});
+

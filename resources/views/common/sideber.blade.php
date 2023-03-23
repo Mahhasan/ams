@@ -47,6 +47,33 @@
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Profile</span></a>
     </li>
+
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities2"
+            aria-expanded="true" aria-controls="collapseUtilities2">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Email Marketing</span>
+        </a>
+        <div id="collapseUtilities2" class="collapse" aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Email Groups</h6>
+                <a class="collapse-item" href="{{route('users')}}">All Users</a>
+                <a class="collapse-item" href="#">General Members</a>
+                <a class="collapse-item" href="#">Associate Members</a>
+                <a class="collapse-item" href="#">Full Members</a>
+                <a class="collapse-item" href="#">Excutive Members</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="/calendar">
+            <i class="fa fa-calendar"></i>
+            <span>Calendar </span></a>
+    </li>
+
     <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
@@ -57,11 +84,7 @@
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Accounting </span></a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Email & SMS </span></a>
-    </li>
+    
     <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
@@ -113,11 +136,7 @@
             <i class="fa fa-user"></i>
             <span>Profile</span></a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fa fa-calendar"></i>
-            <span>Calendar </span></a>
-    </li>
+    
     <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-files-o"></i>

@@ -27,6 +27,8 @@ class Member extends Model
         'country',
         'membership_category',
         'membership_price',
+        'current_date',
+        'expiry_date'
     ];
     public function user()
     {

@@ -33,6 +33,8 @@ return new class extends Migration
             $table->string('country');
             $table->string('membership_category');
             $table->string('membership_price');
+            $table->string('current_date')->Nullable();
+            $table->string('expiry_date')->Nullable();
             $table->timestamps();
         });
     }

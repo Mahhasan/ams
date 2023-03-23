@@ -31,22 +31,18 @@ class SubscriptionRenewalNotification extends Mailable
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    
-    // }
 
     /**
      * Get the message envelope.
      *
      * @return \Illuminate\Mail\Mailables\Envelope
      */
-    // public function envelope()
-    // {
-    //     return new Envelope(
-    //         subject: 'Subscription Renewal Notification',
-    //     );
-    // }
+    public function envelope()
+    {
+        return new Envelope(
+            subject: 'Subscription Renewal Notification',
+        );
+    }
 
     /**
      * Get the message content definition.
@@ -65,8 +61,8 @@ class SubscriptionRenewalNotification extends Mailable
      *
      * @return array
      */
-    // public function attachments()
-    // {
-    //     return [];
-    // }
+    public function attachments()
+    {
+        return [];
+    }
 }

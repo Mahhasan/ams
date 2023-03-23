@@ -4,11 +4,13 @@ namespace App\Console\Commands;
 use App\Models\Subscription;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Mail;
-
+use DB;
+use Carbon\Carbon;
+use App\Models\User;
 class SendSubscriptionRenewalNotifications extends Command
 {
 
-    protected $signature = 'subscription:notify-renewal';
+    protected $signature = 'membership:notify-renewal';
 
     protected $description = 'Send email notifications to users for subscription renewal.';
     /**
@@ -32,17 +34,26 @@ class SendSubscriptionRenewalNotifications extends Command
      */
     public function handle()
     {
-        $expiryDate = now()->addDays(config('subscription.notification_days'));
-
-        $subscriptions = Subscription::where('expiry_date', $expiryDate)->get();
-
-        foreach ($subscriptions as $subscription) {
-            $user = $subscription->user;
-
-            Mail::to($user->email)->send(new SubscriptionRenewalNotification($user));
-        }
-
-        $this->info('Email notifications sent successfully!');
         // return Command::SUCCESS;
+
+        $expiryDates = DB::table('members')->pluck('expiry_date', 'user_id');
+
+        // Check expiry dates and determine which users need to be notified
+        foreach ($expiryDates as $userId => $expiryDate) {
+            $now = Carbon::now();
+            $expiryDate = Carbon::parse($expiryDate);
+
+            if ($expiryDate->isPast() || $expiryDate->diffInDays($now) <= 30) {
+                // Get the user details
+                $user = User::find($userId);
+
+                // Send notification email
+                Mail::send('email.subscription-renewal-notification', ['user' => $user], function ($message) use ($user) {
+                    $message->to($user->email, $user->first_name)
+                        ->subject('Membership Expiry Notification')
+                        ->from('your_email@example.com');
+                });
+            }
+        }
     }
 }

@@ -20,7 +20,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
-        $schedule->command('subscription:notify-renewal')->everyMinute();
+        $schedule->command('membership:notify-renewal')->daily();
     }
 
     /**
