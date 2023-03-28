@@ -97,7 +97,9 @@
 
     <!-- Bootstrap core JavaScript-->
     <!-- <script src="{{asset('admin/vendor/jquery/jquery.min.js')}}"></script> -->
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
     <script src="{{asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('admin/js/custom.js')}}"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="{{asset('admin/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
@@ -106,12 +108,16 @@
     <script src="{{asset('admin/js/sb-admin-2.min.js')}}"></script>
 
     <!-- Page level plugins -->
+    <script src='http://fullcalendar.io/js/fullcalendar-2.1.1/lib/moment.min.js'></script>
+    
+    
     <script src="{{asset('admin/vendor/chart.js/Chart.min.js')}}"></script>
     <script src="http://fullcalendar.io/js/fullcalendar-2.1.1/lib/jquery-ui.custom.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
-    <script src='http://fullcalendar.io/js/fullcalendar-2.1.1/lib/moment.min.js'></script>
-   
     <script src='http://fullcalendar.io/js/fullcalendar-2.1.1/fullcalendar.min.js'></script>
+    
+    
+   
+    
     
         
 

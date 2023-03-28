@@ -98,11 +98,6 @@
     <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Calendar</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-chart-area"></i>
             <span>Documents</span></a>
     </li>
     <li class="nav-item">
@@ -136,7 +131,11 @@
             <i class="fa fa-user"></i>
             <span>Profile</span></a>
     </li>
-    
+    <li class="nav-item">
+        <a class="nav-link" href="/calendar">
+            <i class="fa fa-calendar"></i>
+            <span>Calendar </span></a>
+    </li>
     <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-files-o"></i>

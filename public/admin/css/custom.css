@@ -550,7 +550,6 @@
     font-size: 1em;
     text-align: center;
     overflow: hidden;
-    font-family: "Courier New", Courier, monospace;
     /* don't allow browser text-selection */
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -1092,7 +1091,6 @@
     overflow: hidden;
     line-height: 8px;
     font-size: 11px;
-    font-family: monospace;
     text-align: center;
     cursor: s-resize; }
   
@@ -1255,7 +1253,6 @@
     z-index: 123456;
   }
   body{
-    font-family: 'Nunito', sans-serif;
     background: #F3F5F9;
   }
   .card{
@@ -1268,26 +1265,19 @@
     font-size: 22px;
     text-align: center;
     letter-spacing: 1px;
-    font-family: 'Montserrat', sans-serif;
     color: #002147;
     margin-bottom: 20px;
   }
   .btn{
     font-size: 15px !important;
-    text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 2.5px;
-    font-family: 'Nunito', sans-serif;
+    letter-spacing: 1.5px;
     box-shadow: none !important;
     border: 0;
     padding: 10px 20px !important;
   }
   .btn:focus{
     box-shadow: none;
-  }
-  .btn.btn-primary{
-    background: #002147;
-    color: #ffffff;
   }
   .form-group label{
     font-weight: 600;

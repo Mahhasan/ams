@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Hash;
 use App\Models\Member;
 use App\Models\User;
+use App\Models\Event;
 use Illuminate\Support\Facades\Auth;
 use App\Models\MembershipCategory;
 use Mail;
@@ -230,5 +231,26 @@ class UserController extends Controller
         $data-> save();
 
         return redirect()->route('member_details',$data->id)->with('success', 'Status Updated successfully');
+    }
+    public function create_event(Request $request)
+    {
+        $event = new Event([
+            'ename' => $request['ename'],
+            'edate' => $request['edate'],
+            'edesc' => $request['edesc'],
+            'email' => $request['email'],
+            'number' => $request['number'],
+            'status' => $request['status'],
+            'date'=> $request['date'],
+            'designation' => $request['designation'],
+        
+         
+        ]);
+        $event->save();
+
+        // Mail::to('fgs.se2@daffodilvarsity.edu.bd')->send(new MembershipRequestMail([$member]));
+        // Mail::to($member->user->email)->send(new MembershipFormSubmissionMail([$event]));
+
+        return redirect('/home')->with('success', 'Information successfully Submitted');
     }
 }

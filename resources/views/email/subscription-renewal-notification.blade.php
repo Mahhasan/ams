@@ -1,8 +1,7 @@
-Hello {{ $user->first_name }} {{ $user->first_name }},
+<h4>Dear {{ $user->first_name }} {{ $user->last_name }},</h4>
+<p>Your membership package is going to expire on {{$user->member->expiry_date}}. 
+    Please contact to AMS authority to renew your membership.</p>
+    Thank you for your continued patronage.
 
-Your subscription will expire on {{$user->member->expiry_date}}. Please renew your subscription to continue enjoying our services.
-
-Thank you for your continued patronage.
-
-Best regards,
-The Management Team
+    Best regards,
+    The AMS Management Team

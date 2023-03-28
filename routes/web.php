@@ -44,3 +44,6 @@ Route::get('/calendar', function () {
     return view('calendar');
 });
 
+Route::post('/create_event', [App\Http\Controllers\UserController::class, 'create_event'])->name('create_event');
+
+
