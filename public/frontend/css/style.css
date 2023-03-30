@@ -2171,7 +2171,7 @@
   
   .banner-carousel .slide-item{
     position: relative;
-    padding: 144px 0px 256px 0px;
+    padding: 144px 0px 32px 0px;
   }
   
   .banner-carousel .slide-item:before{
@@ -2266,8 +2266,8 @@
     position: relative;
     display: block;
     color: #fff;
-    font-size: 72px;
-    line-height: 76px;
+    font-size: 48px;
+    line-height: 52px;
     font-weight: 700;
     margin-bottom: 21px;
     opacity: 0;
@@ -2303,7 +2303,7 @@
     color: #fff;
     font-size: 16px;
     line-height: 26px;
-    margin-bottom: 33px;
+    margin-bottom: 133px;
     opacity: 0;
     -webkit-transform: translateX(-100px);
     -moz-transform: translateX(-100px);
@@ -2380,13 +2380,13 @@
   .banner-section .owl-nav .owl-next{
     position: absolute;
     display: inline-block;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
     font-size: 30px;
     color: #ffffff;
     text-align: center;
-    border: 2px solid #ffffff;
+    border: 3px solid #ffffff;
     border-radius: 5px;
     cursor: pointer;
     background: transparent;
@@ -2394,11 +2394,11 @@
   }
   
   .banner-section .owl-nav .owl-prev{
-    left: 50px;
+    left: 20px;
   }
   
   .banner-section .owl-nav .owl-next{
-    right: 50px;
+    right: 20px;
   }
   
   .banner-section .owl-nav .owl-prev:hover,
@@ -4762,6 +4762,7 @@
     height: 100%;
     top: 0px;
     right: 0px;
+    background: #ffffff;
   }
   
   .footer-top .footer-logo img{
