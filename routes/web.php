@@ -47,3 +47,7 @@ Route::get('/calendar', function () {
 Route::post('/create_event', [App\Http\Controllers\UserController::class, 'create_event'])->name('create_event');
 
 
+// Routes for Frontend
+Route::get('/about', function () {
+    return view('frontend.about');
+});

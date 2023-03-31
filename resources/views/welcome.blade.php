@@ -1,7 +1,7 @@
 
 @extends('frontend.layouts.app')
 @section('content')
-
+@include('frontend.common.main_banner')
 <!-- activities-section -->
 <section class="activities-section centred bg-color-1">
     <div class="auto-container">

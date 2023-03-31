@@ -54,24 +54,22 @@
         <!-- main-header end -->
 
         <!-- banner-section end -->
-        @include('frontend.common.banner')
+        
         <!-- banner-section end -->
 
         <!-- main body -->
         @yield('content')
         <!-- end main body -->
 
-
         <!-- main-footer -->
         @include('frontend.common.footer')
         <!-- main-footer end -->
 
-
-
         <!--Scroll to top-->
-        <button class="scroll-top scroll-to-target" data-target="html">
-            <span class="fas fa-angle-up"></span>
-        </button>
+        @include('frontend.common.scroll')
+        <!--Scroll to top-->
+
+        
     </div>
 
 
