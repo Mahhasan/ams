@@ -9,30 +9,33 @@
             <div class="row clearfix">
                 <div class="col-lg-3 col-md-6 col-sm-12 single-column">
                     <div class="single-item">
-                        <div class="icon-box"><i class="flaticon-garbage-truck"></i></div>
-                        <h6>Schedule</h6>
-                        <h4>Garbage & Recycling</h4>
+                        <!-- <div class="icon-box"><i class="flaticon-garbage-truck"></i></div> -->
+                        <div class="icon-box"><i class="flaticon-parking"></i></div>
+                        <!-- <h6>Become a member</h6> -->
+                        <h4><a style="color:#2e3094;" href="/membership-form">Become a member</a></h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 single-column">
                     <div class="single-item">
                         <div class="icon-box"><i class="flaticon-parking"></i></div>
-                        <h6>In Effect</h6>
-                        <h4>Alternate Side Parking</h4>
+                        <!-- <h6>In Effect</h6> -->
+                        <h4><a style="color:#2e3094;" href="#">Benefit of Member</a></h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 single-column">
                     <div class="single-item">
-                        <div class="icon-box"><i class="flaticon-school"></i></div>
-                        <h6>Schools</h6>
-                        <h4>All Schools are Open</h4>
+                        <!-- <div class="icon-box"><i class="flaticon-school"></i></div> -->
+                        <div class="icon-box"><i class="flaticon-parking"></i></div>
+                        <!-- <h6>Schools</h6> -->
+                        <h4><a style="color:#2e3094;" href="#">User Guideline</a></h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 single-column">
                     <div class="single-item">
-                        <div class="icon-box"><i class="flaticon-taxes"></i></div>
-                        <h6>Council Tax</h6>
-                        <h4>Pay Your Council Tax</h4>
+                        <!-- <div class="icon-box"><i class="flaticon-taxes"></i></div> -->
+                        <div class="icon-box"><i class="flaticon-parking"></i></div>
+                        <!-- <h6>Council Tax</h6> -->
+                        <h4><a style="color:#2e3094;" href="#">FAQ's</a></h4>
                     </div>
                 </div>
             </div>
@@ -107,7 +110,7 @@
 
 
 <!-- explore-section -->
-{{-- <section class="explore-section centred bg-color-2">
+<!-- <section class="explore-section centred bg-color-2">
     <figure class="vector-image"><img src="{{asset('frontend/images/icons/vector-1.png')}}" alt=""></figure>
     <div class="pattern-layer" style="background-image: url({{asset('frontend/images/shape/shape-1.png')}});"></div>
     <div class="auto-container">
@@ -212,7 +215,7 @@
             </div>
         </div>
     </div>
-</section> --}}
+</section> -->
 <!-- explore-section end -->
 
 
