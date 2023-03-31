@@ -50,14 +50,15 @@
                 <div class="content_block_1">
                     <div class="content-box">
                         <div class="sec-title">
-                            <h6><i class="flaticon-star"></i><span>Welcome to Whitehall</span></h6>
-                            <h2>Whitehall is an Inner Metropolitan Municipality</h2>
+                            <h6><i class="flaticon-star"></i><span>About AMS</span></h6>
+                            <h2>An Association Management Solution for your Agency</h2>
                             <div class="title-shape"></div>
                         </div>
                         <div class="text">
-                            <h5>We denounce with righteous indignation and dislike men who are so beguiled demoralized charms of pleasure.</h5>
-                            <h4>Mayor, “Jordan Cooper”</h4>
-                            <p>When our power of choice is untrammelled when nothing prevents our being able to do what we like best, every pleasure is to be welcomed every pain get avoided. But in certain circumstances owing.</p>
+                           
+                            <h5 class="justified">An Association Management System (AMS) is a software solution designed to help associations manage their day-to-day operations. It typically includes features for membership management, event planning, communication, and financial management. AMS can be cloud-based or on-premises, and are used by a variety of associations, including trade associations, professional societies, and nonprofit organizations.</h5>
+                            {{-- <h4>Mayor, “Jordan Cooper”</h4>
+                            <p>When our power of choice is untrammelled when nothing prevents our being able to do what we like best, every pleasure is to be welcomed every pain get avoided. But in certain circumstances owing.</p> --}}
                         </div>
                         <div class="inner-box clearfix">
                             <figure class="signature pull-left"><img src="{{asset('frontend/images/icons/signature.png')}}" alt=""></figure>
@@ -73,7 +74,7 @@
                                 <div class="col-lg-6 col-md-6 col-sm-12 single-column">
                                     <div class="single-item wow fadeInLeft animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                                         <div class="icon-box"><i class="flaticon-government"></i></div>
-                                        <h5>Mayor Office</h5>
+                                        <h5>AMS Office</h5>
                                         <p><a href="tel:4488812345">+44 (888) 12 345</a></p>
                                     </div>
                                 </div>
@@ -81,7 +82,7 @@
                                     <div class="single-item wow fadeInRight animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                                         <div class="icon-box"><i class="flaticon-alert"></i></div>
                                         <h5>Emergency</h5>
-                                        <p><a href="tel:911">911</a> (Police, Ambula...)</p>
+                                        <p><a href="tel:999">999</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +95,7 @@
                     <div class="image-box">
                         <figure class="image"><img src="{{asset('frontend/images/resource/about-1.jpg')}}" alt=""></figure>
                         <div class="text">
-                            <h4>“Residents Showed Commitment & Courage In this Crucial Situation.”</h4>
+                            <h4>“Association Management System (AMS) makes your Organization Smart”</h4>
                         </div>
                     </div>
                 </div>
@@ -106,12 +107,12 @@
 
 
 <!-- explore-section -->
-<section class="explore-section centred bg-color-2">
+{{-- <section class="explore-section centred bg-color-2">
     <figure class="vector-image"><img src="{{asset('frontend/images/icons/vector-1.png')}}" alt=""></figure>
     <div class="pattern-layer" style="background-image: url({{asset('frontend/images/shape/shape-1.png')}});"></div>
     <div class="auto-container">
         <div class="sec-title centred light">
-            <!-- <h6><i class="flaticon-star"></i><span>Governance & Strategy</span><i class="flaticon-star"></i></h6> -->
+           <h6><i class="flaticon-star"></i><span>Governance & Strategy</span><i class="flaticon-star"></i></h6>
             <h2>Explore City Government</h2>
             <div class="title-shape"></div>
         </div>
@@ -211,7 +212,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- explore-section end -->
 
 
@@ -252,7 +253,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 service-block">
                 <div class="service-block-one wow fadeInLeft animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <h4><a href="police-crime.html">Policing & Crime Department</a></h4>
+                        <h4><a href="police-crime.html">Membership Management</a></h4>
                         <div class="btn-box"><a href="police-crime.html">More</a></div>
                         <div class="icon-box"><i class="flaticon-police"></i></div>
                     </div>
@@ -261,18 +262,18 @@
             <div class="col-lg-6 col-md-6 col-sm-12 title-column">
                 <div class="sec-title centred">
                     <div class="sec-title centred">
-                        <h6><i class="flaticon-star"></i><span>Departments</span><i class="flaticon-star"></i></h6>
-                        <h2>Explore Our Departments</h2>
+                        <h6><i class="flaticon-star"></i><span>Modules</span><i class="flaticon-star"></i></h6>
+                        <h2>Explore Our Modules</h2>
                         <div class="title-shape"></div>
-                        <a href="departments.html" class="links">All Departments<i class="flaticon-right-arrow"></i></a>
+                        <a href="departments.html" class="links">All Modules<i class="flaticon-right-arrow"></i></a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 service-block">
                 <div class="service-block-one wow fadeInRight animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <h4><a href="tourism-travel.html">Finance & Legal Department</a></h4>
-                        <div class="btn-box"><a href="tourism-travel.html">More</a></div>
+                        <h4><a href="/">Committee Management</a></h4>
+                        <div class="btn-box"><a href="/">More</a></div>
                         <div class="icon-box"><i class="flaticon-justice"></i></div>
                     </div>
                 </div>
@@ -280,8 +281,8 @@
             <div class="col-lg-3 col-md-6 col-sm-12 service-block">
                 <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <h4><a href="trasport-traffic.html">Transport & Traffic Department</a></h4>
-                        <div class="btn-box"><a href="trasport-traffic.html">More</a></div>
+                        <h4><a href="/">Event Management</a></h4>
+                        <div class="btn-box"><a href="/">More</a></div>
                         <div class="icon-box"><i class="flaticon-traffic-sign"></i></div>
                     </div>
                 </div>
@@ -289,8 +290,8 @@
             <div class="col-lg-3 col-md-6 col-sm-12 service-block">
                 <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="200ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <h4><a href="arts-culture.html">Arts & Culture Department</a></h4>
-                        <div class="btn-box"><a href="arts-culture.html">More</a></div>
+                        <h4><a href="/">Accounting</a></h4>
+                        <div class="btn-box"><a href="/">More</a></div>
                         <div class="icon-box"><i class="flaticon-statue"></i></div>
                     </div>
                 </div>
@@ -298,8 +299,8 @@
             <div class="col-lg-3 col-md-6 col-sm-12 service-block">
                 <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="400ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <h4><a href="housing-land.html">Housing & Land Department</a></h4>
-                        <div class="btn-box"><a href="housing-land.html">More</a></div>
+                        <h4><a href="/">Contact Management</a></h4>
+                        <div class="btn-box"><a href="/">More</a></div>
                         <div class="icon-box"><i class="flaticon-chinese-house"></i></div>
                     </div>
                 </div>
@@ -307,8 +308,8 @@
             <div class="col-lg-3 col-md-6 col-sm-12 service-block">
                 <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <h4><a href="health-medical.html">Health & Medical Department</a></h4>
-                        <div class="btn-box"><a href="health-medical.html">More</a></div>
+                        <h4><a href="/">Meeting</a></h4>
+                        <div class="btn-box"><a href="/">More</a></div>
                         <div class="icon-box"><i class="flaticon-hospital"></i></div>
                     </div>
                 </div>
@@ -538,8 +539,8 @@
     </div>
     <div class="auto-container">
         <div class="sec-title centred">
-            <h6><i class="flaticon-star"></i><span>Online Services</span><i class="flaticon-star"></i></h6>
-            <h2>Instant Solutions For All</h2>
+            <h6><i class="flaticon-star"></i><span>AMS Services</span><i class="flaticon-star"></i></h6>
+            <h2>Packages and Facilities for Members</h2>
             <div class="title-shape"></div>
         </div>
         <div class="inner-container">
@@ -547,76 +548,56 @@
                 <div class="solution-block-one">
                     <div class="inner-box">
                         <div class="icon-box"><i class="flaticon-click"></i></div>
-                        <h4>Taxes & Bills</h4>
-                        <p>Residential & Non-residential</p>
+                        <h4>Become a member</h4>
+                        <p>File grievances against department</p>
                     </div>
                 </div>
                 <div class="solution-block-one">
                     <div class="inner-box">
                         <div class="icon-box"><i class="flaticon-click"></i></div>
-                        <h4>Building Sanction</h4>
-                        <p>Procedure for building permission</p>
-                    </div>
-                </div>
-                <div class="solution-block-one">
-                    <div class="inner-box">
-                        <div class="icon-box"><i class="flaticon-click"></i></div>
-                        <h4>Commencement</h4>
-                        <p>Every pain get avoided in certain</p>
-                    </div>
-                </div>
-                <div class="solution-block-one">
-                    <div class="inner-box">
-                        <div class="icon-box"><i class="flaticon-click"></i></div>
-                        <h4>Vendor Registration</h4>
-                        <p>Start your business with register</p>
-                    </div>
-                </div>
-                <div class="solution-block-one">
-                    <div class="inner-box">
-                        <div class="icon-box"><i class="flaticon-click"></i></div>
-                        <h4>Birth Cirtificate</h4>
+                        <h4>Online Payment</h4>
                         <p>Apply & Track birth registration</p>
                     </div>
                 </div>
                 <div class="solution-block-one">
                     <div class="inner-box">
                         <div class="icon-box"><i class="flaticon-click"></i></div>
-                        <h4>Fire NOC</h4>
+                        <h4>Event Solution</h4>
                         <p>Login or Register to get NOC</p>
                     </div>
                 </div>
                 <div class="solution-block-one">
                     <div class="inner-box">
                         <div class="icon-box"><i class="flaticon-click"></i></div>
-                        <h4>Taxis & Private</h4>
+                        <h4>Internal Communication</h4>
                         <p>Information about registration ...</p>
                     </div>
                 </div>
                 <div class="solution-block-one">
                     <div class="inner-box">
                         <div class="icon-box"><i class="flaticon-click"></i></div>
-                        <h4>Death Certificate</h4>
+                        <h4>Business Scope</h4>
                         <p>Apply & Track death registration</p>
                     </div>
                 </div>
                 <div class="solution-block-one">
                     <div class="inner-box">
                         <div class="icon-box"><i class="flaticon-click"></i></div>
-                        <h4>Raise Complaints</h4>
-                        <p>File grievances against department</p>
+                        <h4>Business to Business</h4>
+                        <p>Apply & Track death registration</p>
                     </div>
                 </div>
+                
             </div>
             <div class="lower-box clearfix">
                 <div class="bg-layer" style="background-image: url({{asset('frontend/images/background/bg-1.jpg')}});"></div>
                 <div class="text pull-left">
                     <div class="icon-box"><i class="flaticon-idea"></i></div>
-                    <h3>Share Your Ideas to Help Our City’s Future.</h3>
-                    <p>We all have different interests, needs and hopes for our city future. What do you think?</p>
+                    <h3>Donate through the Organization</h3>
+                    <p>Donation is a powerful act which can make a meaningful impact on the lives of those in need.</p>
                 </div>
                 <div class="btn-box pull-right">
-                    <a href="/" class="theme-btn">Share your Say</a>
+                    <a href="/" class="theme-btn">Donate</a>
                 </div>
             </div>
         </div>
@@ -676,8 +657,8 @@
     <div class="pattern-layer" style="background-image: url({{asset('frontend/images/shape/shape-5.png')}});"></div>
     <div class="auto-container">
         <div class="sec-title">
-            <h6><i class="flaticon-star"></i><span>Whitehall Team</span></h6>
-            <h2>Meet Council Members</h2>
+            <h6><i class="flaticon-star"></i><span>AMS Team</span></h6>
+            <h2>Meet AMS Commettiee</h2>
             <div class="title-shape"></div>
             <a href="/" class="theme-btn">All members</a>
         </div>
@@ -688,7 +669,7 @@
                         <figure class="image-box"><a href="/"><img src="{{asset('frontend/images/team/team-1.jpg')}}" alt=""></a></figure>
                         <div class="lower-content">
                             <div class="author-box">
-                                <h4><a href="/">Bertram Irvin</a></h4>
+                                <h4><a href="/">Sabur Khan</a></h4>
                                 <span class="designation">President</span>
                             </div>
                             <ul class="othre-info clearfix">
@@ -713,8 +694,8 @@
                         <figure class="image-box"><a href="/"><img src="{{asset('frontend/images/team/team-2.jpg')}}" alt=""></a></figure>
                         <div class="lower-content">
                             <div class="author-box">
-                                <h4><a href="/">Elvina Julie</a></h4>
-                                <span class="designation">Actuary</span>
+                                <h4><a href="/">Rafiqul Islam Rubel</a></h4>
+                                <span class="designation">Vise President</span>
                             </div>
                             <ul class="othre-info clearfix">
                                 <li class="mail-box"><a href="/"><i class="flaticon-mail-inbox-app"></i>Email</a></li>
@@ -738,8 +719,8 @@
                         <figure class="image-box"><a href="/"><img src="{{asset('frontend/images/team/team-3.jpg')}}" alt=""></a></figure>
                         <div class="lower-content">
                             <div class="author-box">
-                                <h4><a href="/">Herman Gordon</a></h4>
-                                <span class="designation">Director</span>
+                                <h4><a href="/">Kazi Sobuj</a></h4>
+                                <span class="designation">CMO</span>
                             </div>
                             <ul class="othre-info clearfix">
                                 <li class="mail-box"><a href="/"><i class="flaticon-mail-inbox-app"></i>Email</a></li>
@@ -763,8 +744,8 @@
                         <figure class="image-box"><a href="/"><img src="{{asset('frontend/images/team/team-4.jpg')}}" alt=""></a></figure>
                         <div class="lower-content">
                             <div class="author-box">
-                                <h4><a href="/">Marian Lenora</a></h4>
-                                <span class="designation">Speaker</span>
+                                <h4><a href="/">Mahmud Hasan</a></h4>
+                                <span class="designation">Developer</span>
                             </div>
                             <ul class="othre-info clearfix">
                                 <li class="mail-box"><a href="/"><i class="flaticon-mail-inbox-app"></i>Email</a></li>
@@ -809,7 +790,7 @@
                         </div>
                         <div class="lower-content">
                             <div class="category"><a href="/"><i class="flaticon-star"></i>Announcement</a></div>
-                            <h4><a href="blog-details.html">Mayor Invites Medical Experts to Discuss about Covid</a></h4>
+                            <h4><a href="blog-details.html">AMS Demo heading 01</a></h4>
                             <ul class="post-info clearfix">
                                 <li><i class="far fa-user"></i><a href="blog-details.html">Harley Reuban</a></li>
                                 <li><i class="far fa-comment"></i><a href="blog-details.html">2 Comments</a></li>
@@ -830,7 +811,7 @@
                         </div>
                         <div class="lower-content">
                             <div class="category"><a href="/"><i class="flaticon-star"></i>Education</a></div>
-                            <h4><a href="blog-details.html">Outdoor Dining to be Extended this Summer</a></h4>
+                            <h4><a href="blog-details.html">AMS Demo heading 02</a></h4>
                             <ul class="post-info clearfix">
                                 <li><i class="far fa-user"></i><a href="blog-details.html">Bert Anslem</a></li>
                                 <li><i class="far fa-comment"></i><a href="blog-details.html">2 Comments</a></li>
@@ -851,7 +832,7 @@
                         </div>
                         <div class="lower-content">
                             <div class="category"><a href="/"><i class="flaticon-star"></i>Announcement</a></div>
-                            <h4><a href="blog-details.html">Supporting Local Businesses to Bounce Back</a></h4>
+                            <h4><a href="blog-details.html">AMS Demo heading 03</a></h4>
                             <ul class="post-info clearfix">
                                 <li><i class="far fa-user"></i><a href="blog-details.html">Harley Reuban</a></li>
                                 <li><i class="far fa-comment"></i><a href="blog-details.html">0 Comments</a></li>
@@ -875,7 +856,7 @@
                 <div class="col-lg-4 col-md-12 col-sm-12 title-column">
                     <div class="sec-title">
                         <h6><i class="flaticon-star"></i><span>Interesting Facts</span></h6>
-                        <h2>City In Numbers</h2>
+                        <h2>AMS In Numbers</h2>
                         <div class="title-shape"></div>
                     </div>
                 </div>
@@ -933,33 +914,34 @@
                     <div class="title-box centred">
                         <div class="pattern" style="background-image: url({{asset('frontend/images/shape/shape-6.png')}});"></div>
                         <div class="icon-box"><i class="fab fa-twitter"></i></div>
-                        <h4>San Antonio on Twitter</h4>
+                        <h4>Follow AMS on Twitter</h4>
                         <a href="/">Follow Us</a>
                     </div>
                 </div>
                 <div class="single-item">
                     <div class="inner-box">
-                        <h5><i class="far fa-calendar"></i>01 January, 2021</h5>
+                        <h5><i class="far fa-calendar"></i>01 January, 2023</h5>
                         <div class="text">
-                            <p>Official Twitter channel providing support for users of the <a href="/">Http://gov.usa</a> website. This is not a political account and cannot respond to political tweets.</p>
-                            <a href="/">Visit: https://covid19test.sananto.com</a>
+                            <p>Finally AMS has been released its official website and opened the official Twitter Account. This is not a political account and cannot respond to political tweets.</p>
+                            <a href="/">Visit: https://ams.com.bd</a>
                         </div>
                         <ul class="post-info clearfix">
-                            <li><i class="far fa-comment"></i><a href="/">28 Cmnts</a></li>
-                            <li><i class="far fa-heart"></i><a href="/">18 Likes</a></li>
+                            <li><i class="far fa-comment"></i><a href="/">66 Cmnts</a></li>
+                            <li><i class="far fa-heart"></i><a href="/">105 Likes</a></li>
                         </ul>
                         <div class="share"><a href="/"><i class="fas fa-share-alt"></i>Share</a></div>
                     </div>
                 </div>
                 <div class="single-item">
                     <div class="inner-box">
-                        <h5><i class="far fa-calendar"></i>25 December, 2020</h5>
+                        <h5><i class="far fa-calendar"></i>25 December, 2022</h5>
                         <div class="text">
-                            <p>Beguiled and demoralized by the charms of pleasure all <a href="/">http://sanantonio.gov/</a> disclaimer blinded desire that circumtances cannot foresee the pain.</p>
+                            <p>AMS first product become the most hit product in market. President said in a TalkShow. Visit the following link to watch full Talkshow on YouTube.</p>
+                            <a href="/">Visit: https://www.youtube.com/ams_tk</a>
                         </div>
                         <ul class="post-info clearfix">
-                            <li><i class="far fa-comment"></i><a href="/">10 Cmnts</a></li>
-                            <li><i class="far fa-heart"></i><a href="/">20 Likes</a></li>
+                            <li><i class="far fa-comment"></i><a href="/">130 Cmnts</a></li>
+                            <li><i class="far fa-heart"></i><a href="/">260 Likes</a></li>
                         </ul>
                         <div class="share"><a href="/"><i class="fas fa-share-alt"></i>Share</a></div>
                     </div>

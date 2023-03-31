@@ -8,15 +8,15 @@
                     </div>
                     <div class="col-lg-5 col-md-6 col-sm-12 text-column">
                         <div class="text">
-                            <h3>Services in Your Area</h3>
-                            <P>Enter postcode to view services & facilities in your area.</P>
+                            <h3>Subscribe to AMS</h3>
+                            <P>Enter eamil to subscribe and get every single update.</P>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12 form-column">
                         <form action="/" method="post" class="postcode-form">
                             <div class="form-group">
-                                <input type="text" name="postcode" placeholder="Your Postcode ..." required="">
-                                <button type="submit">Check</button>
+                                <input type="text" name="postcode" placeholder="Your Email Address ..." required="">
+                                <button type="submit">Subscribe</button>
                             </div>
                         </form>
                     </div>
