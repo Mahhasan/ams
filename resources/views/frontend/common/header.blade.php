@@ -44,8 +44,8 @@
                     <nav class="main-menu navbar-expand-md navbar-light">
                         <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li class="current"><a href="/">Home</a></li>
-                                <li class="current"><a href="/about">About us</a></li>
+                                <li class=""><a href="/">Home</a></li>
+                                <li class=""><a href="/about">About us</a></li>
                                 <!-- <li class="dropdown"><a href="/">City Govt</a>
                                     <ul>
                                         <li><a href="about.html">About Us</a></li>
@@ -76,10 +76,10 @@
                                         <li><a href="">Hot Line</a></li>
                                     </ul>
                                 </li>
-                                <li class="current"><a href="/">News & Events</a></li>  
+                                <li class=""><a href="/">News & Events</a></li>  
                                 <li class="dropdown"><a href="/">Gallery</a>
                                     <ul>
-                                        <li><a href="">Photo Gallery</a></li>
+                                        <li><a href="/photos">Photo Gallery</a></li>
                                         <li><a href="">Video Gallery</a></li>
                                         <li><a href="">Fairs & Exhibitions</a></li>
                                     </ul>

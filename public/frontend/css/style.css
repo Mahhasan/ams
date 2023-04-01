@@ -1168,7 +1168,7 @@
      position: absolute;
      left: inherit;
      top: 100%;
-     width: 220px;
+     max-width: 320px;
      z-index: 100;
      display: none;
      opacity: 0;
@@ -2374,7 +2374,7 @@
  .activities-section .inner-container {
      position: relative;
      background: #ffffff;
-     border-radius: 5px;
+     border-radius: 5px;vents Grid ViewA
      box-shadow: 0px 15px 25px 0px rgb(0 0 0 / 8%);
      z-index: 2;
      margin-top: -50px;
@@ -3335,7 +3335,7 @@
      position: relative;
      display: block;
      overflow: hidden;
-     background: #252638;
+     background: #ffffff;
      border-radius: 5px 5px 0px 0px;
  }
  
@@ -3362,7 +3362,7 @@
  }
  
  .schedule-block-one .inner-box:hover .image-box .image img {
-     opacity: 0.1;
+     opacity: 0.8;
  }
  
  .schedule-block-one .inner-box .image-box .content-box {
@@ -3377,8 +3377,9 @@
  
  .schedule-block-one .inner-box .image-box .content-box .post-date {
      position: absolute;
-     top: 0px;
-     right: 0px;
+     bottom: 10px;
+     right: 10px;
+     color: #ffffff !important;
  }
  
  .schedule-block-one .inner-box .image-box .content-box .post-date h3 {

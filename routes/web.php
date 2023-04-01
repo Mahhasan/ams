@@ -51,3 +51,6 @@ Route::post('/create_event', [App\Http\Controllers\UserController::class, 'creat
 Route::get('/about', function () {
     return view('frontend.about');
 });
+Route::get('/photos', function () {
+    return view('frontend.photos');
+});

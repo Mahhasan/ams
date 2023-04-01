@@ -34,12 +34,11 @@
                         </div>
                         <div class="widget-content">
                             <ul class="links-list clearfix">
-                                <li><a href="departments.html">All Departments</a></li>
-                                <li><a href="police-crime.html">Policing & Crime</a></li>
-                                <li><a href="trasport-traffic.html">Trasport & Traffic</a></li>
-                                <li><a href="housing-land.html">Housing & Land</a></li>
-                                <li><a href="health-medical.html">Health & Medical</a></li>
-                                <li><a href="arts-culture.html">Arts & Culture</a></li>
+                                <li><a href="#">Mambership Management</a></li>
+                                <li><a href="#">Event Solution</a></li>
+                                <li><a href="#">Internal Communication</a></li>
+                                <li><a href="#">Business Scope</a></li>
+                                <li><a href="#">Business to Business</a></li>
                             </ul>
                         </div>
                     </div>
@@ -51,12 +50,11 @@
                         </div>
                         <div class="widget-content">
                             <ul class="links-list clearfix">
-                                <li><a href="/">Administration</a></li>
-                                <li><a href="/">Financial Services</a></li>
-                                <li><a href="/">Fire Services</a></li>
-                                <li><a href="/">Library</a></li>
-                                <li><a href="/">Police</a></li>
-                                <li><a href="/">Public</a></li>
+                                <li><a href="/about">About</a></li>
+                                <li><a href="#">Membership</a></li>
+                                <li><a href="#">News & Events</a></li>
+                                <li><a href="/photos">Gallery</a></li>
+                                <li><a href="#">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -70,15 +68,15 @@
                             <ul class="info clearfix">
                                 <li>
                                     <h5>Location</h5>
-                                    <p>46, The queen’s walk Street, <br />San Antonio 78154.</p>
+                                    <p>Dhaka, Bangladesh.</p>
                                 </li>
                                 <li>
                                     <h5>Phone</h5>
-                                    <p><a href="tel:448881234546">+44 888 12 345 46</a></p>
+                                    <p><a href="tel:448881234546">+8801101010101</a></p>
                                 </li>
                                 <li>
                                     <h5>Email</h5>
-                                    <p><a href="mailto:info@example.com">info@example.com</a></p>
+                                    <p><a href="mailto:info@example.com">info@ams.com</a></p>
                                 </li>
                             </ul>
                         </div>
@@ -108,7 +106,7 @@
                 <ul class="footer-nav clearfix pull-right">
                     <li><a href="/">FAQ’s</a></li>
                     <!-- <li><a href="/">Covid’19 Updates </a></li> -->
-                    <li><a href="/">Government</a></li>
+                    <li><a href="/">Policy</a></li>
                 </ul>
             </div>
         </div>

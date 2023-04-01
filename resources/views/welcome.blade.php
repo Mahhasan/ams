@@ -1,4 +1,3 @@
-
 @extends('frontend.layouts.app')
 @section('content')
 @include('frontend.common.main_banner')
@@ -256,7 +255,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 service-block">
                 <div class="service-block-one wow fadeInLeft animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <h4><a href="police-crime.html">Membership Management</a></h4>
+                        <h4><a href="/home">Membership Management</a></h4>
                         <div class="btn-box"><a href="police-crime.html">More</a></div>
                         <div class="icon-box"><i class="flaticon-police"></i></div>
                     </div>
@@ -268,14 +267,14 @@
                         <h6><i class="flaticon-star"></i><span>Modules</span><i class="flaticon-star"></i></h6>
                         <h2>Explore Our Modules</h2>
                         <div class="title-shape"></div>
-                        <a href="departments.html" class="links">All Modules<i class="flaticon-right-arrow"></i></a>
+                        <a href="/home" class="links">All Modules<i class="flaticon-right-arrow"></i></a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 service-block">
                 <div class="service-block-one wow fadeInRight animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <h4><a href="/">Committee Management</a></h4>
+                        <h4><a href="/home">Committee Management</a></h4>
                         <div class="btn-box"><a href="/">More</a></div>
                         <div class="icon-box"><i class="flaticon-justice"></i></div>
                     </div>
@@ -284,7 +283,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 service-block">
                 <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <h4><a href="/">Event Management</a></h4>
+                        <h4><a href="/home">Event</a></h4>
                         <div class="btn-box"><a href="/">More</a></div>
                         <div class="icon-box"><i class="flaticon-traffic-sign"></i></div>
                     </div>
@@ -293,7 +292,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 service-block">
                 <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="200ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <h4><a href="/">Accounting</a></h4>
+                        <h4><a href="/home">Accounting</a></h4>
                         <div class="btn-box"><a href="/">More</a></div>
                         <div class="icon-box"><i class="flaticon-statue"></i></div>
                     </div>
@@ -302,7 +301,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 service-block">
                 <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="400ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <h4><a href="/">Contact Management</a></h4>
+                        <h4><a href="/home">Contact</a></h4>
                         <div class="btn-box"><a href="/">More</a></div>
                         <div class="icon-box"><i class="flaticon-chinese-house"></i></div>
                     </div>
@@ -311,7 +310,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 service-block">
                 <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <h4><a href="/">Meeting</a></h4>
+                        <h4><a href="/home">Meeting</a></h4>
                         <div class="btn-box"><a href="/">More</a></div>
                         <div class="icon-box"><i class="flaticon-hospital"></i></div>
                     </div>
@@ -331,7 +330,7 @@
             <div class="row clearfix">
                 <div class="col-lg-6 col-md-6 col-sm-12 title-column">
                     <div class="sec-title light">
-                        <h6><i class="flaticon-star"></i><span>Our Calendars</span></h6>
+                        <h6 style="color: #ffffff;"><i class="flaticon-star" ></i><span >Our Calendars</span></h6>
                         <h2>Our Schedules & Routines</h2>
                         <div class="title-shape"></div>
                     </div>
@@ -347,7 +346,7 @@
             <div class="tab-btn-box">
                 <ul class="tab-btns schedule-tab-btns clearfix">
                     <li class="p-tab-btn active-btn" data-tab="#tab-1">Upcoming Events</li>
-                    <li class="p-tab-btn" data-tab="#tab-2">Upcoming Metings</li>
+                    <li class="p-tab-btn" data-tab="#tab-2">Upcoming Meetings</li>
                     <li class="p-tab-btn" data-tab="#tab-3">Community Calendar</li>
                 </ul>
             </div>
@@ -387,14 +386,14 @@
                                                     <div class="post-date"><h3>28<span>Jan’21</span></h3></div>
                                                     <div class="text">
                                                         <span class="category"><i class="flaticon-star"></i>Celebration</span>
-                                                        <h4><a href="event-details.html">Public Affairs & Public Safety Committee Meeting</a></h4>
+                                                        <h4><a href="event-details.html">Upcoming Events</a></h4>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="lower-content">
                                                 <ul class="post-info clearfix">
                                                     <li><i class="flaticon-clock-circular-outline"></i>3.00 pm - 4.30 pm</li>
-                                                    <li><i class="flaticon-gps"></i>Heaton Park, Mt Road M25 2SW</li>
+                                                    <li><i class="flaticon-gps"></i>Dhaka, Bangladesh</li>
                                                 </ul>
                                                 <div class="links"><a href="event-details.html">Read More<i class="flaticon-right-arrow"></i></a></div>
                                                 <div class="share-box"><a href="/">Share<i class="fas fa-share-alt"></i></a></div>
@@ -409,14 +408,14 @@
                                                     <div class="post-date"><h3>15<span>Feb’21</span></h3></div>
                                                     <div class="text">
                                                         <span class="category"><i class="flaticon-star"></i>Art & Culture</span>
-                                                        <h4><a href="event-details.html">Street San Antonio Sketches & Urban History</a></h4>
+                                                        <h4><a href="event-details.html">Upcoming Events</a></h4>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="lower-content">
                                                 <ul class="post-info clearfix">
                                                     <li><i class="flaticon-clock-circular-outline"></i>10.00 am - 6.30 pm</li>
-                                                    <li><i class="flaticon-gps"></i>182 St Georges Road, San Antonio</li>
+                                                    <li><i class="flaticon-gps"></i>Dhaka, Bangladesh</li>
                                                 </ul>
                                                 <div class="links"><a href="event-details.html">Read More<i class="flaticon-right-arrow"></i></a></div>
                                                 <div class="share-box"><a href="/">Share<i class="fas fa-share-alt"></i></a></div>
@@ -435,14 +434,14 @@
                                                     <div class="post-date"><h3>28<span>Jan’21</span></h3></div>
                                                     <div class="text">
                                                         <span class="category"><i class="flaticon-star"></i>Celebration</span>
-                                                        <h4><a href="event-details.html">Public Affairs & Public Safety Committee Meeting</a></h4>
+                                                        <h4><a href="event-details.html">Upcoming Meetings</a></h4>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="lower-content">
                                                 <ul class="post-info clearfix">
                                                     <li><i class="flaticon-clock-circular-outline"></i>3.00 pm - 4.30 pm</li>
-                                                    <li><i class="flaticon-gps"></i>Heaton Park, Mt Road M25 2SW</li>
+                                                    <li><i class="flaticon-gps"></i>Dhaka, Bangladesh</li>
                                                 </ul>
                                                 <div class="links"><a href="event-details.html">Read More<i class="flaticon-right-arrow"></i></a></div>
                                                 <div class="share-box"><a href="/">Share<i class="fas fa-share-alt"></i></a></div>
@@ -457,14 +456,14 @@
                                                     <div class="post-date"><h3>15<span>Feb’21</span></h3></div>
                                                     <div class="text">
                                                         <span class="category"><i class="flaticon-star"></i>Art & Culture</span>
-                                                        <h4><a href="event-details.html">Street San Antonio Sketches & Urban History</a></h4>
+                                                        <h4><a href="event-details.html">Upcoming Meetings</a></h4>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="lower-content">
                                                 <ul class="post-info clearfix">
                                                     <li><i class="flaticon-clock-circular-outline"></i>10.00 am - 6.30 pm</li>
-                                                    <li><i class="flaticon-gps"></i>182 St Georges Road, San Antonio</li>
+                                                    <li><i class="flaticon-gps"></i>Dhaka, Bangladesh</li>
                                                 </ul>
                                                 <div class="links"><a href="event-details.html">Read More<i class="flaticon-right-arrow"></i></a></div>
                                                 <div class="share-box"><a href="/">Share<i class="fas fa-share-alt"></i></a></div>
@@ -483,14 +482,14 @@
                                                     <div class="post-date"><h3>28<span>Jan’21</span></h3></div>
                                                     <div class="text">
                                                         <span class="category"><i class="flaticon-star"></i>Celebration</span>
-                                                        <h4><a href="event-details.html">Public Affairs & Public Safety Committee Meeting</a></h4>
+                                                        <h4><a href="event-details.html">Community Calendar</a></h4>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="lower-content">
                                                 <ul class="post-info clearfix">
                                                     <li><i class="flaticon-clock-circular-outline"></i>3.00 pm - 4.30 pm</li>
-                                                    <li><i class="flaticon-gps"></i>Heaton Park, Mt Road M25 2SW</li>
+                                                    <li><i class="flaticon-gps"></i>Dhaka, Bangladesh</li>
                                                 </ul>
                                                 <div class="links"><a href="event-details.html">Read More<i class="flaticon-right-arrow"></i></a></div>
                                                 <div class="share-box"><a href="/">Share<i class="fas fa-share-alt"></i></a></div>
@@ -505,14 +504,14 @@
                                                     <div class="post-date"><h3>15<span>Feb’21</span></h3></div>
                                                     <div class="text">
                                                         <span class="category"><i class="flaticon-star"></i>Art & Culture</span>
-                                                        <h4><a href="event-details.html">Street San Antonio Sketches & Urban History</a></h4>
+                                                        <h4><a href="event-details.html">Community Calendar</a></h4>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="lower-content">
                                                 <ul class="post-info clearfix">
                                                     <li><i class="flaticon-clock-circular-outline"></i>10.00 am - 6.30 pm</li>
-                                                    <li><i class="flaticon-gps"></i>182 St Georges Road, San Antonio</li>
+                                                    <li><i class="flaticon-gps"></i>Dhaka, Bangladesh</li>
                                                 </ul>
                                                 <div class="links"><a href="event-details.html">Read More<i class="flaticon-right-arrow"></i></a></div>
                                                 <div class="share-box"><a href="/">Share<i class="fas fa-share-alt"></i></a></div>

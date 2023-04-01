@@ -12,7 +12,7 @@
                             <a href="/"><img src="{{asset('frontend/images/logo-2.png')}}" alt="" /></a>
                         </div>
                         <div class="content-box">
-                            <h4>Book Now</h4>
+                            <h4>Contact Us</h4>
                             <form action="/" method="post" class="booking-form">
                                 <div class="form-group">
                                     <input type="text" name="name" placeholder="Name" required="">
@@ -21,19 +21,19 @@
                                     <input type="email" name="email" placeholder="Email" required="">
                                 </div>
                                 <div class="form-group">
-                                    <textarea name="message" placeholder="Text"></textarea>
+                                    <textarea name="message" placeholder="Message"></textarea>
                                 </div>
                                 <div class="form-group message-btn">
-                                    <button type="submit">Send Now</button>
+                                    <button type="submit">Send</button>
                                 </div>
                             </form>
                         </div>
                         <div class="contact-info">
                             <h4>Contact Info</h4>
                             <ul>
-                                <li>Chicago 12, Melborne City, USA</li>
-                                <li><a href="tel:+8801682648101">+88 01682648101</a></li>
-                                <li><a href="mailto:info@example.com">info@example.com</a></li>
+                                <li>Dhaka, Bangladesh</li>
+                                <li><a href="tel:+8801682648101">+88 016********</a></li>
+                                <li><a href="mailto:info@example.com">info@ams.com</a></li>
                             </ul>
                         </div>
                         <ul class="social-box">

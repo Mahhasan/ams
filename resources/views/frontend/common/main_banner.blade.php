@@ -6,8 +6,8 @@
             <div class="auto-container">
                 <div class="content-box">
                     <!-- <h6 style="color:#0a12fc;"><i class="flaticon-star"></i>Whitehall of San Antonio</h6> -->
-                    <h1>Probably the Best Town in the Universe.</h1>
-                    <p>Righteous indignation and dislike men who are so beguiled & demoralized by the charms of pleasure of the moment.</p>
+                    <h1>Simplify Association Management with AMS</h1>
+                    <p>Customizable Member Profiles and Contact Management</p>
                     <!-- <div class="btn-box">
                         <a href="/" class="theme-btn">Read More</a>
                     </div> -->
@@ -19,8 +19,8 @@
             <div class="auto-container">
                 <div class="content-box">
                     <!-- <h6 style="color:#0a12fc;"><i class="flaticon-star"></i>Turn Our Change into</h6> -->
-                    <h1>Help For Rough Sleepers of San Antonio.</h1>
-                    <p>Our power of choice is untrammelled and when nothing prevents our being able to do what we like best is to be welcomed.</p>
+                    <h1>Streamline Your Association with AMS</h1>
+                    <p>Event and Conference Management Made Effortless</p>
                     <!-- <div class="btn-box">
                         <a href="/" class="theme-btn">Read More</a>
                     </div> -->
@@ -32,8 +32,8 @@
             <div class="auto-container">
                 <div class="content-box">
                     <!-- <h6 class="text-white"><i class="flaticon-star"></i>Tourist Attractions</h6> -->
-                    <h1>Museum of Art & the McNay Museum.</h1>
-                    <p>Undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man.</p>
+                    <h1>Manage Your Association with Ease</h1>
+                    <p>Powerful Data Analytics and Reporting</p>
                     <!-- <div class="btn-box">
                         <a href="/" class="theme-btn">Read More</a>
                     </div> -->
