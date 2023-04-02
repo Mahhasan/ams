@@ -74,27 +74,27 @@
             <span>Calendar </span></a>
     </li>
 
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Human Resources</span></a>
-    </li>
+    </li> -->
     <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Accounting </span></a>
     </li>
     
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Announcements</span></a>
-    </li>
-    <li class="nav-item">
+    </li> -->
+    <!-- <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Reminder</span></a>
-    </li>
+    </li> -->
     <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
@@ -110,11 +110,11 @@
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Meeting </span></a>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Smart Board</span></a>
-    </li>
+    </li> -->
     <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
@@ -124,6 +124,16 @@
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Contacts</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Contacts</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Website</span></a>
     </li>
     @elseif(Auth::user()->role == 'user')
     <li class="nav-item">
@@ -151,11 +161,11 @@
             <i class="fa fa-handshake-o"></i>
             <span>Meeting</span></a>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fa fa-dashboard"></i>
             <span>Smart Board</span></a>
-    </li>
+    </li> -->
     <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fa fa-desktop"></i>
@@ -165,6 +175,11 @@
         <a class="nav-link" href="#">
             <i class="fa fa-address-book"></i>
             <span>Contacts</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Website</span></a>
     </li>
     @endif
     

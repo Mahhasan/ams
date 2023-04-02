@@ -619,8 +619,8 @@
                         <p>Perfectly simple & easy to free hour when our power choice is nothing too prevents our being able what all get we like best pleasure.</p>
                     </div>
                     <div class="author-box">
-                        <h4>Bertram Irvin</h4>
-                        <span class="designation test-white">Citizen</span>
+                        <h4>Name</h4>
+                        <span class="designation test-white">Designation</span>
                     </div>
                 </div>
             </div>
@@ -631,8 +631,8 @@
                         <p>I am highly impressed with the professionalism and passion of the people in this warehouse well educated, neat and clean city life.</p>
                     </div>
                     <div class="author-box">
-                        <h4>Ivan Johny</h4>
-                        <span class="designation">Visitors from Indonasia</span>
+                        <h4>Name</h4>
+                        <span class="designation test-white">Designation</span>
                     </div>
                 </div>
             </div>
@@ -643,8 +643,8 @@
                         <p>The wise man therefore always holds in these matters to this on principle off selection rejects  to secure others greater pleasures.</p>
                     </div>
                     <div class="author-box">
-                        <h4>Lucian Manroe</h4>
-                        <span class="designation">Citizen</span>
+                        <h4>Name</h4>
+                        <span class="designation test-white">Designation</span>
                     </div>
                 </div>
             </div>
@@ -697,7 +697,7 @@
                         <div class="lower-content">
                             <div class="author-box">
                                 <h4><a href="/">Rafiqul Islam Rubel</a></h4>
-                                <span class="designation">Vise President</span>
+                                <span class="designation">Member</span>
                             </div>
                             <ul class="othre-info clearfix">
                                 <li class="mail-box"><a href="/"><i class="flaticon-mail-inbox-app"></i>Email</a></li>
@@ -722,7 +722,7 @@
                         <div class="lower-content">
                             <div class="author-box">
                                 <h4><a href="/">Kazi Sobuj</a></h4>
-                                <span class="designation">CMO</span>
+                                <span class="designation">Member</span>
                             </div>
                             <ul class="othre-info clearfix">
                                 <li class="mail-box"><a href="/"><i class="flaticon-mail-inbox-app"></i>Email</a></li>
@@ -746,8 +746,8 @@
                         <figure class="image-box"><a href="/"><img src="{{asset('frontend/images/team/team-4.jpg')}}" alt=""></a></figure>
                         <div class="lower-content">
                             <div class="author-box">
-                                <h4><a href="/">Mahmud Hasan</a></h4>
-                                <span class="designation">Developer</span>
+                                <h4><a href="/">Jannat-UL-Naim</a></h4>
+                                <span class="designation">Member</span>
                             </div>
                             <ul class="othre-info clearfix">
                                 <li class="mail-box"><a href="/"><i class="flaticon-mail-inbox-app"></i>Email</a></li>
@@ -776,7 +776,7 @@
     <div class="auto-container">
         <div class="sec-title centred">
             <h6><i class="flaticon-star"></i><span>News & Blog</span><i class="flaticon-star"></i></h6>
-            <h2>Latest From Our Newsroom</h2>
+            <h2>Latest Articles</h2>
             <div class="title-shape"></div>
         </div>
         <div class="row clearfix">
