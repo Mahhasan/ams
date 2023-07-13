@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,3 +71,33 @@ Route::get('/about', function () {
 Route::get('/photos', function () {
     return view('frontend.photos');
 });
+
+// For voting module
+
+// Route::post('/vote-types', [VoteController::class, 'createVoteType'])->name('votes.vote-types.create');
+// Route::get('/vote-types', [VoteController::class, 'showVoteTypes'])->name('votes.vote-types.index');
+// Route::post('/voters', [VoteController::class, 'createVoters'])->name('votes.voters.create');
+// Route::post('/candidates', [VoteController::class, 'createCandidates'])->name('votes.candidates.create');
+// Route::post('/vote', [VoteController::class, 'vote'])->name('votes.vote');
+// Route::get('/results/{voteTypeId}/download', [VoteController::class, 'downloadResult'])->name('votes.results.download');
+
+Route::get('/vote-types/create', [VoteController::class, 'showCreateVoteTypeForm'])->name('votes.vote-types.create');
+Route::post('/vote-types', [VoteController::class, 'createVoteType'])->name('votes.vote-types.store');
+Route::get('/vote-types', [VoteController::class, 'showVoteTypes'])->name('votes.vote-types.index');
+Route::get('/voters/create/{voteTypeId}', [VoteController::class, 'showAddVotersForm'])->name('votes.voters.create');
+Route::post('/voters/create', [VoteController::class, 'createVoters'])->name('votes.voters.store');
+Route::get('/candidates/create/{voteTypeId}', [VoteController::class, 'showAddCandidatesForm'])->name('votes.candidates.create');
+Route::post('/candidates/create', [VoteController::class, 'createCandidates'])->name('votes.candidates.store');
+Route::get('/vote', [VoteController::class, 'showVoteForm'])->name('votes.vote.create');
+Route::post('/vote', [VoteController::class, 'vote'])->name('votes.vote.store');
+Route::get('/results/{voteTypeId}/download', [VoteController::class, 'downloadResult'])->name('votes.results.download');
+
+
+// Route::prefix('votes')->group(function () {
+//     Route::get('create-vote-types', [App\Http\Controllers\VoteController::class, 'create'])->name('votes.create-vote-types');
+
+//     Route::get('select-voters', [App\Http\Controllers\VoteController::class, 'selectVoters']);
+//     Route::post('store-voters', [App\Http\Controllers\VoteController::class, 'storeVoters']);
+//     Route::get('select-candidates', [App\Http\Controllers\VoteController::class, 'selectCandidates']);
+//     Route::post('store-candidates', [App\Http\Controllers\VoteController::class, 'storeCandidates']);
+// });

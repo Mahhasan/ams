@@ -87,9 +87,31 @@
     <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Accounting </span></a>
+            <span>Meeting </span></a>
     </li>
-    
+    <!-- <li class="nav-item">
+        <a class="nav-link" href="{{ route('votes.vote-types.index') }}">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Vote</span></a>
+    </li> -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities3"
+            aria-expanded="true" aria-controls="collapseUtilities3">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Vote</span>
+        </a>
+        <div id="collapseUtilities3" class="collapse" aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">AMS Election</h6>
+                <a class="collapse-item" href="{{ route('votes.vote-types.index') }}">Election Cetagories</a>
+                <a class="collapse-item" href="{{ route('votes.vote-types.create') }}">Create Election</a>
+                <a class="collapse-item" href="#">Associate Members</a>
+                <a class="collapse-item" href="#">Full Members</a>
+                <a class="collapse-item" href="#">Excutive Members</a>
+            </div>
+        </div>
+    </li>
     <!-- <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
@@ -100,16 +122,18 @@
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Reminder</span></a>
     </li> -->
+    
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Accounting </span></a>
+    </li>
     <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Documents</span></a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Meeting </span></a>
-    </li>
+    
     <!-- <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-chart-area"></i>

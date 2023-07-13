@@ -42,7 +42,7 @@
                       
                     </div>
                    
-                    
+                  
                     <h4 class="mb-0">{{$users->first_name}} {{$users->last_name}}</h4>
                    
                     <span class="text-muted d-block mb-2">{{$members->designation}}</span>
