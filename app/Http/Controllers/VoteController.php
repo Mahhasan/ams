@@ -47,13 +47,17 @@ class VoteController extends Controller
         return view('votes.vote_types.index', compact('voteTypes'));
     }
 
-    public function showAddVotersForm($voteTypeId)
-    {
-        $voteType = VoteType::findOrFail($voteTypeId);
-        $members = Member::all(); // Replace with the actual member model
+    public function showAddVotersForm($voteTypeId = null)
+{
+    $voteType = null;
+    $members = Member::all();
 
-        return view('votes.voters.create', compact('voteType', 'members'));
+    if ($voteTypeId) {
+        $voteType = VoteType::findOrFail($voteTypeId);
     }
+
+    return view('votes.voters.create', compact('voteType', 'members'));
+}
 
     public function createVoters(Request $request)
     {
@@ -77,10 +81,14 @@ class VoteController extends Controller
         return redirect()->back()->with('success', 'Voters added successfully.');
     }
 
-    public function showAddCandidatesForm($voteTypeId)
+    public function showAddCandidatesForm($voteTypeId = null)
     {
-        $voteType = VoteType::findOrFail($voteTypeId);
-        $members = Member::all(); // Replace with the actual member model
+        $voteType = null;
+        $members = Member::all();
+
+        if ($voteTypeId) {
+            $voteType = VoteType::findOrFail($voteTypeId);
+        }
 
         return view('votes.candidates.create', compact('voteType', 'members'));
     }
@@ -112,7 +120,7 @@ class VoteController extends Controller
         $voteTypes = VoteType::all();
         $candidates = Candidate::all(); // Replace with the actual candidate model
 
-        return view('votes.votes.create', compact('voteTypes', 'candidates'));
+        return view('votes.vote.create', compact('voteTypes', 'candidates'));
     }
 
     public function vote(Request $request)

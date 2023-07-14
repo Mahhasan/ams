@@ -84,14 +84,15 @@ Route::get('/photos', function () {
 Route::get('/vote-types/create', [VoteController::class, 'showCreateVoteTypeForm'])->name('votes.vote-types.create');
 Route::post('/vote-types', [VoteController::class, 'createVoteType'])->name('votes.vote-types.store');
 Route::get('/vote-types', [VoteController::class, 'showVoteTypes'])->name('votes.vote-types.index');
-Route::get('/voters/create/{voteTypeId}', [VoteController::class, 'showAddVotersForm'])->name('votes.voters.create');
+// Route::get('/voters/create/{voteTypeId}', [VoteController::class, 'showAddVotersForm'])->name('votes.voters.create');
+Route::get('/voters/create/{voteTypeId?}', [VoteController::class, 'showAddVotersForm'])->name('votes.voters.create');
 Route::post('/voters/create', [VoteController::class, 'createVoters'])->name('votes.voters.store');
-Route::get('/candidates/create/{voteTypeId}', [VoteController::class, 'showAddCandidatesForm'])->name('votes.candidates.create');
+// Route::get('/candidates/create/{voteTypeId}', [VoteController::class, 'showAddCandidatesForm'])->name('votes.candidates.create');
+Route::get('/candidates/create/{voteTypeId?}', [VoteController::class, 'showAddCandidatesForm'])->name('votes.candidates.create');
 Route::post('/candidates/create', [VoteController::class, 'createCandidates'])->name('votes.candidates.store');
 Route::get('/vote', [VoteController::class, 'showVoteForm'])->name('votes.vote.create');
 Route::post('/vote', [VoteController::class, 'vote'])->name('votes.vote.store');
 Route::get('/results/{voteTypeId}/download', [VoteController::class, 'downloadResult'])->name('votes.results.download');
-
 
 // Route::prefix('votes')->group(function () {
 //     Route::get('create-vote-types', [App\Http\Controllers\VoteController::class, 'create'])->name('votes.create-vote-types');

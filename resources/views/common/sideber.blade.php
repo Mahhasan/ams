@@ -176,6 +176,11 @@
             <span>Calendar</span></a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="{{route('votes.vote.create')}}">
+            <i class="fas fa-files-o"></i>
+            <span>Vote</span></a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-files-o"></i>
             <span>Documents</span></a>

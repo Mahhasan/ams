@@ -6,7 +6,7 @@
     </div>
 @endif
 
-<form action="{{ route('votes.vote') }}" method="POST">
+<form action="{{ route('votes.vote.store') }}" method="POST">
     @csrf
     <div class="form-group">
         <label for="vote_type_id">Vote Type</label>

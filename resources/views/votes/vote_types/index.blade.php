@@ -22,9 +22,8 @@
                 <td>{{ $voteType->start_date }}</td>
                 <td>{{ $voteType->end_date }}</td>
                 <td>
-                <a href="{{ route('votes.voters.create', $voteType->id) }}" class="btn btn-primary">Add Voters</a>
-                <a href="{{ route('votes.candidates.create', $voteType->id) }}" class="btn btn-primary">Add Candidates</a>
-
+                    <a href="{{ route('votes.voters.create', $voteType->id ?? '') }}" class="btn btn-primary">Add Voters</a>
+                    <a href="{{ route('votes.candidates.create', $voteType->id ?? '') }}" class="btn btn-primary">Add Candidates</a>
                 </td>
             </tr>
         @endforeach
