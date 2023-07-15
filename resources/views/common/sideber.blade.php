@@ -186,7 +186,7 @@
             <span>Documents</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route('ams_meeting')}}">
             <i class="fa fa-handshake-o"></i>
             <span>Meeting</span></a>
     </li>

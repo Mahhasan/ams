@@ -72,6 +72,11 @@ Route::get('/photos', function () {
     return view('frontend.photos');
 });
 
+// For Meeting
+Route::get('/meeting', function () {
+    return view('meeting');
+})->name('ams_meeting');
+
 // For voting module
 
 // Route::post('/vote-types', [VoteController::class, 'createVoteType'])->name('votes.vote-types.create');

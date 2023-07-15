@@ -1,6 +1,4 @@
-@extends('layouts.master')
 
-@section('content')
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,6 +15,10 @@
 
 
   <div class="content">
+    <div class="mb-3" style="max-width: 900px;
+  margin: 0 auto;">
+      <a href="{{route('home')}}" class="btn btn-info">Back to dashboard</a>
+    </div>
     <div id='calendar'></div>
   </div><br>
   
@@ -110,4 +112,3 @@
     </script>
 
     <script src="{{asset('calendar/js/main.js')}}"></script>
-@endsection
