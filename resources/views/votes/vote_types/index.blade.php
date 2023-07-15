@@ -1,3 +1,6 @@
+@extends('layouts.master')
+
+@section('content')
 <h2>Vote Types</h2>
 
 @if (session('success'))
@@ -29,3 +32,4 @@
         @endforeach
     </tbody>
 </table>
+@endsection

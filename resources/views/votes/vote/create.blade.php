@@ -1,3 +1,6 @@
+@extends('layouts.master')
+
+@section('content')
 <h2>Vote</h2>
 
 @if (session('error'))
@@ -23,10 +26,10 @@
         <select name="candidate_id" id="candidate_id" class="form-control" required>
             <option value="">Select Candidate</option>
             @foreach ($candidates as $candidate)
-                <option value="{{ $candidate->id }}">fghfgdhfg</option>
+                <option value="{{ $candidate->id }}">{{ $candidate->member->first_name }} {{ $candidate->member->last_name }}</option>
             @endforeach
         </select>
     </div>
     <button type="submit" class="btn btn-primary">Vote</button>
 </form>
-
+@endsection

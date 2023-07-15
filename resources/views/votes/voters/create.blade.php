@@ -1,3 +1,6 @@
+@extends('layouts.master')
+
+@section('content')
 <h2>Add Voters</h2>
 
 @if (session('success'))
@@ -20,3 +23,4 @@
     </div>
     <button type="submit" class="btn btn-primary">Add Voters</button>
 </form>
+@endsection

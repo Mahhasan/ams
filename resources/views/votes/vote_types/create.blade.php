@@ -1,3 +1,6 @@
+@extends('layouts.master')
+
+@section('content')
 <h2>Create Vote Type</h2>
 
 @if ($errors->any())
@@ -26,3 +29,4 @@
     </div>
     <button type="submit" class="btn btn-primary">Create</button>
 </form>
+@endsection

@@ -51,10 +51,11 @@
     
     document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
+    var currentDate = new Date().toISOString().split('T')[0];
     
     var calendar = new FullCalendar.Calendar(calendarEl, {
       plugins: [ 'interaction', 'dayGrid' ],
-      defaultDate: '2023-04-05',
+      defaultDate: currentDate,
       editable: true,
       eventLimit: true, // allow "more" link when too many events
       events: [

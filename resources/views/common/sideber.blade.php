@@ -85,9 +85,9 @@
             <span>Human Resources</span></a>
     </li> -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route('ams_meeting')}}">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Meeting </span></a>
+            <span>Meeting</span></a>
     </li>
     <!-- <li class="nav-item">
         <a class="nav-link" href="{{ route('votes.vote-types.index') }}">
