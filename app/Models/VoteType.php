@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class VoteType extends Model
 {
     use HasFactory;
-    protected $table = 'vote_types';
 
     protected $fillable = ['title', 'start_date', 'end_date'];
 
@@ -16,14 +15,20 @@ class VoteType extends Model
     {
         return $this->hasMany(Voter::class);
     }
+
     public function candidates()
     {
         return $this->hasMany(Candidate::class);
     }
-    public function vote_results()
+
+    public function votes()
+    {
+        return $this->hasManyThrough(Vote::class, Voter::class);
+    }
+
+    public function results()
     {
         return $this->hasMany(VoteResult::class);
     }
-
     // Add relationships or any other configurations
 }

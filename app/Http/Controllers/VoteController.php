@@ -116,65 +116,76 @@ class VoteController extends Controller
     }
 
     public function showVoteForm()
-    {
-        $voteTypes = VoteType::all();
-        $candidates = Candidate::all(); // Replace with the actual candidate model
+{
+    $voteTypes = VoteType::all();
+    $voter = Voter::where('member_id', auth()->user()->member->id)->first();
+    $selectedVoteTypeId = $voter ? $voter->vote_type_id : null;
 
-        return view('votes.vote.create', compact('voteTypes', 'candidates'));
+    $candidates = [];
+    if ($selectedVoteTypeId) {
+        $candidates = Candidate::where('vote_type_id', $selectedVoteTypeId)->get();
     }
+
+    return view('votes.vote.create', compact('voteTypes', 'candidates', 'voter'));
+}
+
+    
+    
 
     public function vote(Request $request)
-    {
-        // Validate the request
-        $request->validate([
-            'vote_type_id' => 'required',
-            'candidate_id' => 'required',
-        ]);
+{
+    // Validate the request
+    $request->validate([
+        'vote_type_id' => 'required',
+        'candidate_id' => 'required',
+    ]);
 
-        // Get the vote type and voter
-        $voteType = VoteType::findOrFail($request->vote_type_id);
-        $voter = $voteType->voters()->where('member_id', auth()->user()->id)->first();
+    // Get the vote type and voter
+    $voteType = VoteType::findOrFail($request->vote_type_id);
+    $voter = Voter::where('member_id', auth()->user()->member->id)->first();
 
-        // Check if the voter is eligible to vote
-        if (!$voter) {
-            return redirect()->back()->with('error', 'You are not eligible to vote in this category.');
-        }
-
-        // Check if the voting period is active
-        $currentDate = now()->toDateString();
-        if ($currentDate < $voteType->start_date || $currentDate > $voteType->end_date) {
-            return redirect()->back()->with('error', 'Voting period has ended.');
-        }
-
-        // Check if the voter has already voted
-        if ($voter->hasVoted()) {
-            return redirect()->back()->with('error', 'You have already voted in this category.');
-        }
-
-        // Create a new vote
-        $vote = new Vote([
-            'candidate_id' => $request->candidate_id,
-        ]);
-
-        // Associate the vote with the vote type and voter
-        $voteType->votes()->save($vote);
-        $voter->votes()->save($vote);
-
-        // Increment the vote count for the candidate in the results table
-        $result = VoteResult::where('vote_type_id', $voteType->id)->where('candidate_id', $request->candidate_id)->first();
-        if ($result) {
-            $result->increment('vote_count');
-        } else {
-            VoteResult::create([
-                'vote_type_id' => $voteType->id,
-                'candidate_id' => $request->candidate_id,
-                'vote_count' => 1,
-            ]);
-        }
-
-        // Redirect back with success message
-        return redirect()->back()->with('success', 'Vote submitted successfully.');
+    // Check if the voter is eligible to vote
+    if (!$voter) {
+        return redirect()->back()->with('error', 'You are not eligible to vote in this category.');
     }
+
+    // Check if the voting period is active
+    $currentDate = now()->toDateString();
+    if ($currentDate < $voteType->start_date || $currentDate > $voteType->end_date) {
+        return redirect()->back()->with('error', 'Voting period has ended.');
+    }
+
+    // Check if the voter has already voted
+    if ($voter->hasVoted()) {
+        return redirect()->back()->with('error', 'You have already voted in this category.');
+    }
+
+    // Create a new vote
+    $vote = new Vote([
+        'candidate_id' => $request->candidate_id,
+    ]);
+
+    // Associate the vote with the vote type and voter
+    $voteType->votes()->save($vote);
+    $voter->votes()->save($vote);
+
+    // Increment the vote count for the candidate in the results table
+    $result = VoteResult::where('vote_type_id', $voteType->id)
+        ->where('candidate_id', $request->candidate_id)
+        ->first();
+    if ($result) {
+        $result->increment('vote_count');
+    } else {
+        VoteResult::create([
+            'vote_type_id' => $voteType->id,
+            'candidate_id' => $request->candidate_id,
+            'vote_count' => 1,
+        ]);
+    }
+
+    // Redirect back with success message
+    return redirect()->back()->with('success', 'Vote submitted successfully.');
+}
 
     public function downloadResult($voteTypeId)
     {

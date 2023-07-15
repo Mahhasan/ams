@@ -8,6 +8,7 @@
 
 <form action="{{ route('votes.vote.store') }}" method="POST">
     @csrf
+    <!-- <input type="hidden" name="voter_id" value="5"> -->
     <div class="form-group">
         <label for="vote_type_id">Vote Type</label>
         <select name="vote_type_id" id="vote_type_id" class="form-control" required>
@@ -22,9 +23,10 @@
         <select name="candidate_id" id="candidate_id" class="form-control" required>
             <option value="">Select Candidate</option>
             @foreach ($candidates as $candidate)
-                <option value="{{ $candidate->id }}">{{ $candidate->first_name }} {{ $candidate->last_name }}</option>
+                <option value="{{ $candidate->id }}">fghfgdhfg</option>
             @endforeach
         </select>
     </div>
     <button type="submit" class="btn btn-primary">Vote</button>
 </form>
+
