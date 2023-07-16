@@ -153,7 +153,7 @@ class VoteController extends Controller
 
         // Check if the voting period is active
         $currentDate = now()->toDateString();
-        if ($currentDate < $voteType->start_date || $currentDate > $voteType->end_date) {
+        if ($currentDate > $voteType->start_date || $currentDate > $voteType->end_date) {
             return redirect()->back()->with('error', 'Voting period has ended.');
         }
 
