@@ -92,6 +92,8 @@ Route::get('/vote-types', [VoteController::class, 'showVoteTypes'])->name('votes
 // Route::get('/voters/create/{voteTypeId}', [VoteController::class, 'showAddVotersForm'])->name('votes.voters.create');
 Route::get('/voters/create/{voteTypeId?}', [VoteController::class, 'showAddVotersForm'])->name('votes.voters.create');
 Route::post('/voters/create', [VoteController::class, 'createVoters'])->name('votes.voters.store');
+Route::delete('/voters/delete', [VoteController::class, 'deleteVoters'])->name('votes.voters.delete');
+
 // Route::get('/candidates/create/{voteTypeId}', [VoteController::class, 'showAddCandidatesForm'])->name('votes.candidates.create');
 Route::get('/candidates/create/{voteTypeId?}', [VoteController::class, 'showAddCandidatesForm'])->name('votes.candidates.create');
 Route::post('/candidates/create', [VoteController::class, 'createCandidates'])->name('votes.candidates.store');

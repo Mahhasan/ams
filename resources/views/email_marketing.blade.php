@@ -3,8 +3,8 @@
 
 <div class="container-fluid ">
     <div class="d-flex justify-content-between ">
-    <h2 class="text-left my-3">AMS Email Marketing</h2>
-    <button class="btn btn-success send-email my-3" type="submit">Send Email</button>
+        <h2 class="text-left my-3">AMS Email Marketing</h2>
+        <button class="btn btn-success send-email my-3" type="submit">Send Email</button>
     </div>
     <div class="clearfix"></div>
    

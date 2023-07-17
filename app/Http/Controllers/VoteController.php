@@ -9,7 +9,7 @@ use App\Models\VoteResult;
 use App\Models\Vote;
 use Illuminate\Http\Request;
 use PDF;
-
+use Illuminate\Support\Facades\DB;
 class VoteController extends Controller
 {
    
@@ -51,35 +51,74 @@ class VoteController extends Controller
 {
     $voteType = null;
     $members = Member::all();
+    $submittedVoters = [];
+
+    // Fetch all vote types
+    $voteTypes = VoteType::all();
 
     if ($voteTypeId) {
         $voteType = VoteType::findOrFail($voteTypeId);
+        $submittedVoters = $voteType->voters->pluck('id')->toArray();
     }
 
-    return view('votes.voters.create', compact('voteType', 'members'));
+    return view('votes.voters.create', compact('voteType', 'members', 'submittedVoters', 'voteTypes'));
 }
 
-    public function createVoters(Request $request)
-    {
-        // Validate the request
-        $request->validate([
-            'vote_type_id' => 'required',
-            'voters' => 'required|array',
-        ]);
+public function createVoters(Request $request)
+{
+    // Validate the request
+    $request->validate([
+        'vote_type_id' => 'required',
+        'voters' => 'required|array',
+    ]);
 
-        $voters = [];
-
-        // Save voters for the given vote type
-        foreach ($request->voters as $voterId) {
-            $voters[] = new Voter(['member_id' => $voterId]);
-        }
-
-        // Associate voters with the vote type
-        VoteType::find($request->vote_type_id)->voters()->saveMany($voters);
-
-        // Redirect back with success message
-        return redirect()->back()->with('success', 'Voters added successfully.');
+    // Check if the voting period is active
+    $voteType = VoteType::findOrFail($request->vote_type_id);
+    $currentDate = now()->toDateString();
+    if ($currentDate < $voteType->start_date || $currentDate > $voteType->end_date) {
+        return redirect()->back()->with('error', 'Voting period has ended.');
     }
+
+    // Get the selected voters
+    $selectedVoters = $request->input('voters', []);
+
+    // Check if the voters have already voted
+    $votersAlreadyVoted = Voter::where('vote_type_id', $voteType->id)
+        ->whereIn('member_id', $selectedVoters)
+        ->exists();
+    if ($votersAlreadyVoted) {
+        return redirect()->back()->with('error', 'One or more selected voters have already voted in this category.');
+    }
+
+    // Save voters for the given vote type
+    $voters = [];
+    foreach ($selectedVoters as $voterId) {
+        $voters[] = new Voter(['vote_type_id' => $voteType->id, 'member_id' => $voterId]);
+    }
+
+    Voter::insert($voters);
+
+    // Redirect back with success message
+    return redirect()->back()->with('success', 'Voters added successfully.');
+}
+
+public function deleteVoters(Request $request)
+{
+    // Validate the request
+    $request->validate([
+        'voter_ids' => 'required|array',
+    ]);
+
+    // Get the selected voter IDs to delete
+    $voterIdsToDelete = $request->input('voter_ids', []);
+
+    // Delete the voters
+    Voter::whereIn('id', $voterIdsToDelete)->delete();
+
+    // Redirect back with success message
+    return redirect()->back()->with('success', 'Voters deleted successfully.');
+}
+
 
     public function showAddCandidatesForm($voteTypeId = null)
     {
